@@ -1,0 +1,286 @@
+General Styles
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 2em 10px;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* .container {
+  max-width: 1200px;
+ 
+  padding: 0 1rem;
+} */
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(33, 33, 33, 1.0);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+} 
+
+.container {
+  /* width: '200%'; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu {
+  width: 75vw;
+  gap: 2.25rem;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #ccc;
+}
+
+/* Jumbotron Image */
+/* .jumbotron {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+} */
+
+/* .jumbotron h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+} */
+
+
+
+.jumbotron-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the container */
+  
+}
+
+/* .text-content {
+  position: absolute;
+  top: 50%;
+  left: 10%; 
+  transform: translateY(-50%);
+  color: white; 
+  padding: 20px; 
+  z-index: 1; 
+} */
+
+
+.banner {
+  flex: 1; /* Allow the banner to grow and take remaining space */
+}
+
+.banner h1 {
+  margin: 0; /* Remove default margin for the heading */
+}
+
+.banner p {
+  margin: 10px 0; /* Add some margin below the paragraph */
+}
+
+
+/* .banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+} */
+
+/* Main Section */
+main {
+  padding: 4rem 0;
+}
+
+/* Skills Section */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#skills li {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+#skillsModal{
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* Projects Section */
+#projects {
+  background-color: #f5f5f5;
+  padding: 2rem 0;
+}
+
+/* Blog Section */
+#blog {
+  padding: 2rem 0;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #f5f5f5;
+  padding: 2rem 0;
+}
+
+/* Footer Section */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Add this to your CSS file */
+#projects {
+  padding: 40px 0;
+}
+
+#projects h2 {
+  font-family: 'Anta', sans-serif;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  display: inline-block;
+}
+
+#projects .card {
+  transition: transform 0.2s ease-in-out;
+}
+
+#projects .card:hover {
+  transform: translateY(-10px);
+}
+
+.ui.modal {
+  z-index: 1050 !important; /* Ensure the modal is on top */
+}
+ 
+.ui.inverted.menu {
+  border-color: transparent;
+  background-image: initial;
+  background-color: rgb(9, 9, 9);
+  box-shadow: none;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(9, 9, 9);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.mobile-logo {
+  height: 50px;
+  width: 188px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  opacity: 0;
+  animation: typing 0.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.5s; }
+.menu-item:nth-child(2) { animation-delay: 1s; }
+.menu-item:nth-child(3) { animation-delay: 1.5s; }
+.menu-item:nth-child(4) { animation-delay: 2s; }
+.menu-item:nth-child(5) { animation-delay: 2.5s; }
+.menu-item:nth-child(6) { animation-delay: 3s; }
+
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
