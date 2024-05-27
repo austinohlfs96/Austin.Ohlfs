@@ -34,7 +34,5 @@ root.render(
       
         <App />
       </Router>
-   
-   {/* </Provider> */}
   </div>
 );
