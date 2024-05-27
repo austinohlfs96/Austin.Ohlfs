@@ -268,12 +268,12 @@ footer p {
   animation: typing 0.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
 }
 
-.menu-item:nth-child(1) { animation-delay: 0.5s; }
-.menu-item:nth-child(2) { animation-delay: 1s; }
-.menu-item:nth-child(3) { animation-delay: 1.5s; }
-.menu-item:nth-child(4) { animation-delay: 2s; }
-.menu-item:nth-child(5) { animation-delay: 2.5s; }
-.menu-item:nth-child(6) { animation-delay: 3s; }
+.menu-item:nth-child(1) { animation-delay: 0.2s; }
+.menu-item:nth-child(2) { animation-delay: 0.5s; }
+.menu-item:nth-child(3) { animation-delay: 0.8s; }
+.menu-item:nth-child(4) { animation-delay: 1s; }
+.menu-item:nth-child(5) { animation-delay: 1.2s; }
+.menu-item:nth-child(6) { animation-delay: 1.5s; }
 
 @keyframes typing {
   from { width: 0; opacity: 1; }
