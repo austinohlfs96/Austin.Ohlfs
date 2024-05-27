@@ -6,7 +6,7 @@ import App from './App';
 import { BrowserRouter as Router} from "react-router-dom";
 // import { Provider } from "react-redux";
 // import { store } from  "./app/store"
-import { ToastProvider, useToasts } from 'react-toast-notifications';
+
 
 
 const container = document.getElementById('root');
@@ -22,7 +22,7 @@ root.render(
             }
           `}
         </style>
-    <ToastProvider>
+  
       <style>
         {`
           .react-toast-notifications__container {
@@ -34,7 +34,7 @@ root.render(
       
         <App />
       </Router>
-     </ToastProvider>
+   
    {/* </Provider> */}
   </div>
 );
