@@ -181,6 +181,10 @@ main {
   padding: 2rem 0;
 }
 
+#projects .card {
+  width: auto
+}
+
 /* Blog Section */
 #blog {
   padding: 2rem 0;
@@ -285,6 +289,4 @@ footer p {
   50% { border-color: orange; }
 }
 
-
-/* skills section */
 
