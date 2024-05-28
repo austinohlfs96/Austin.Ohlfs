@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+import styled from 'styled-components';
 import { request } from 'graphql-request';
 import { Segment, Image } from 'semantic-ui-react';
+import NavBar from './NavBar';
 import Footer from './Footer';
 
 const API_KEY = 'f90d2070-2844-420f-8391-be56993b8389'; // Replace with your actual Hashnode API key
@@ -10,7 +11,6 @@ const Blog = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    // Function to fetch blogs from Hashnode GraphQL API
     const fetchBlogPosts = async () => {
       const query = `
       query Publication {
@@ -42,38 +42,110 @@ const Blog = () => {
       try {
         const response = await request('https://gql.hashnode.com/', query, null, headers);
         setBlogs(response.publication.posts.edges.map(edge => edge.node));
-        console.log(response)
+        console.log(response);
       } catch (error) {
         console.error('Error fetching blog posts:', error);
       }
     };
     
-    // Call the fetchBlogPosts function
     fetchBlogPosts();
   }, []);
 
   return (
-    <div>
-
-      <h1 style={{ textAlign: 'center' }}>Blog</h1>
-      <Segment.Group>
-        {blogs.map(blog => (
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',  backgroundColor: '#f9f9f9', padding: '20px', marginBottom: '20px', borderRadius: '10px'}}>
-            <img style={{ width: '200px', height: '200px', borderRadius: '10px' }} src={blog.coverImage.url} alt="Thumbnail" />
-          <div key={blog.url} className="blog-item" style={{  padding: '20px', marginBottom: '20px' }}>
-          
-          <div>
-              <h2>{blog.title}</h2>
-              <p>{blog.brief}</p>
-              <a href={blog.url} target="_blank" rel="noopener noreferrer">Read more</a>
-              </div>
-          </div>
-      </div>
-        ))}
-      </Segment.Group>
-    </div>
-    
+    <StyledContainer>
+      <NavBar />
+      <StyledSection>
+        <StyledHeader>Blog</StyledHeader>
+        <Segment.Group>
+          {blogs.map(blog => (
+            <BlogItem key={blog.url}>
+              <BlogImage src={blog.coverImage.url} alt="Thumbnail" />
+              <BlogContent>
+                <BlogTitle>{blog.title}</BlogTitle>
+                <BlogBrief>{blog.brief}</BlogBrief>
+                <BlogLink href={blog.url} target="_blank" rel="noopener noreferrer">Read more</BlogLink>
+              </BlogContent>
+            </BlogItem>
+          ))}
+        </Segment.Group>
+      </StyledSection>
+      <Footer />
+    </StyledContainer>
   );
 };
 
 export default Blog;
+
+const StyledContainer = styled.div`
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0;
+  background: #121212;
+  padding: 20px;
+`;
+
+const StyledSection = styled.section`
+  padding: 60px 0;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+`;
+
+const StyledHeader = styled.h1`
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent;
+`;
+
+const BlogItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+`;
+
+const BlogImage = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-right: 20px;
+`;
+
+const BlogContent = styled.div`
+  padding: 20px;
+`;
+
+const BlogTitle = styled.h2`
+  font-size: 1.5em;
+  color: #f5f5f5;
+`;
+
+const BlogBrief = styled.p`
+  margin: 10px 0;
+  color: #b0b0b0;
+`;
+
+const BlogLink = styled.a`
+  color: #2575fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #6a11cb;
+  }
+`;

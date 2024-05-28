@@ -41,8 +41,8 @@ const LandingPage = () => {
         <div className="text-content" style={{ zIndex: -3, padding: isMobile ? '20px' : '50px', textAlign: 'center', color: 'white', backgroundImage: "url(/AustinCoverPhoto.jpeg)", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', opacity: '0.7' }}>
   {/* Text Content */}
   {/* <h1 style={{ fontSize: isMobile ? '5vw' : '7vw', marginBottom: '20px' }}>Austin Ohlfs</h1> */}
-  <h5 style={{ fontSize: isMobile ? '3vw' : '2.5vw', marginBottom: '20px', width: '50%' }}>Full-Stack Software Engineer</h5>
-  <p style={{ fontSize: isMobile ? '2vw' : '1.5vw', width: '50%' }}>
+  <h5 style={{ fontSize: isMobile ? '4vw' : '3vw', marginBottom: isMobile ? '20px' : '60px', width: '50%', textAlign: 'center', marginTop: isMobile ? '20px' : '60px' }}>Full-Stack Software Engineer</h5>
+  <p style={{ fontSize: isMobile ? '2vw' : '1.5vw', width: '50%', marginTop: isMobile ? '20px' : '60px', marginBottom: isMobile ? '20px' : '60px' }}>
     I'm Austin, a Software Engineer and Professional Ski & Snowboard Technician. With expertise in front-end and back-end development, I specialize in technologies such as JavaScript, React, Python, and many others. Explore my qualifications, skills, and portfolio to learn more about what I can offer.
   </p>
 </div>
