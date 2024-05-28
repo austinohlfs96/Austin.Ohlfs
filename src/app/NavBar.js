@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <div>
       {isMobile ? (
-        <Menu fixed="top" inverted borderless style={{ background: 'rgb(9, 9, 9)', color: '#fff', display: 'flex', justifyContent: 'space-between' }}>
+        <Menu fixed="top" inverted borderless style={{ background: 'rgb(33, 33, 33)', color: '#fff', display: 'flex', justifyContent: 'space-between' }}>
           <Menu.Item as={Link} to="/" onClick={() => handleItemClick('/')}>
           <img src="/AustinLogo5.jpg" alt="Logo" style={{ height: '50px', width: '188px', objectFit: 'cover' }} />
         </Menu.Item>  
