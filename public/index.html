@@ -1,52 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Austin Ohlfs - Full-Stack Software Engineer with a passion for coding and skiing. Discover projects, skills, and contact information." />
-    
+
     <!-- SEO Meta Tags -->
     <meta name="author" content="Austin Ohlfs" />
-    <meta name="keywords" content="Austin Ohlfs, Software Engineer, Full-Stack Developer, Web Development, Coding, Skiing" />
-    
+    <meta name="keywords" content="Austin Ohlfs, Software Engineer, Full-Stack Developer, Web Development, Coding, ski/snowboard tuning" />
+
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Austin Ohlfs - Full-Stack Software Engineer" />
-    <meta property="og:description" content="Discover the portfolio of Austin Ohlfs, a full-stack software engineer passionate about web development and skiing." />
-    <meta property="og:image" content="%PUBLIC_URL%/path_to_image.png" />
+    <meta property="og:description" content="Discover the portfolio of Austin Ohlfs, a full-stack software engineer passionate about web development and snowboard tuning." />
+    <meta property="og:image" content="%PUBLIC_URL%/path_to_image.webp" />
     <meta property="og:url" content="https://austin-ohlfs.onrender.com" />
     <meta property="og:type" content="website" />
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Austin Ohlfs - Full-Stack Software Engineer" />
     <meta name="twitter:description" content="Discover the portfolio of Austin Ohlfs, a full-stack software engineer passionate about web development and skiing." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/path_to_image.png" />
-    
+    <meta name="twitter:image" content="%PUBLIC_URL%/path_to_image.webp" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Austin Ohlfs",
+      "jobTitle": "Full-Stack Software Engineer",
+      "url": "https://austin-ohlfs.onrender.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/austin-ohlfs",
+        "https://github.com/austin-ohlfs",
+        "https://twitter.com/austin-ohlfs"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Your Company Name"
+      },
+      "alumniOf": "Your University Name",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vail",
+        "addressRegion": "CO",
+        "addressCountry": "USA"
+      },
+      "knowsAbout": ["Web Development", "Software Engineering", "Coding", "JavaScript", "React", "Node.js", "HTML", "CSS", "Ski Tuning", "Snowboard Tuning"]
+    }
+    </script>
+
     <!-- CSS and Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"></noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Anta&display=swap" />
-    
+
     <!-- Favicon and Apple Touch Icon -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+
     <!-- Page Title -->
     <title>Austin Ohlfs - Full-Stack Software Engineer</title>
-  </head>
-  <body>
+</head>
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Custom 404 Error Page -->
+    <script type="text/javascript">
+      if (!location.pathname.includes("/home")) {
+        const notFoundHTML = `
+          <div style="text-align:center;margin-top:50px;">
+            <h1>404 - Page Not Found</h1>
+            <p>Sorry, the page you are looking for does not exist.</p>
+            <a href="/" style="color:#007BFF;text-decoration:none;">Go to Homepage</a>
+          </div>`;
+        document.body.innerHTML = notFoundHTML;
+      }
+    </script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <!-- AddThis Social Sharing Buttons -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3a1234abcd"></script>
+    <div class="addthis_inline_share_toolbox"></div>
+</body>
 </html>
