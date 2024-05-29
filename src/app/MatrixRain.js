@@ -9,8 +9,8 @@ const MatrixRain = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
-    const fontSize = 16;
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>?/\;:!@#$%^&*(){}[]'.split('');
+    const fontSize = 10;
     const columns = canvas.width / fontSize;
     const drops = Array.from({ length: columns }, () => 1);
 

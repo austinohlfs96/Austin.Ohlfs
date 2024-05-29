@@ -37,6 +37,7 @@ const MainSection = ({ isMobile }) => {
               </div>
             </section>
           </div>
+          
         </Grid.Column>
       </Grid>
       <section id="contact">
