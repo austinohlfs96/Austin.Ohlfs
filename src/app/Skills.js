@@ -1,32 +1,43 @@
 import React, { useState } from 'react';
-import { Grid, Modal, Button, Icon } from 'semantic-ui-react';
+import { Grid, Modal, Button, Icon, Card } from 'semantic-ui-react';
 import styled from 'styled-components';
+import Slider from 'react-slick';
+import StackIcon from "tech-stack-icons"; 
+
+
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
 const Skills = ({ isMobile }) => {
   const initialSkills = [
-    { name: "JavaScript", icon: "js", category: "Frontend" },
-    { name: "React", icon: "react", category: "Frontend" },
+    { name: "JavaScript", icon: "js" , category: "Frontend" },
+    { name: "React", icon: "reactjs", category: "Frontend" },
     { name: "Python", icon: "python", category: "Backend" },
-    { name: "HTML5/CSS3", icon: "html5", category: "Frontend" },
-    { name: "Node.js", icon: "node js", category: "Backend" },
+    { name: "HTML5", icon: "html5", category: "Frontend" },
+    { name: "CSS3", icon: "css3", category: "Frontend" },
+    { name: "PostgreSQL", icon: "postgresql", category: "Backend" },
+    { name: "Node.js", icon: "nodejs", category: "Backend" },
     { name: "Express.js", icon: "server", category: "Backend" },
-    { name: "SQL", icon: "database", category: "Database" },
-    { name: "PostgreSQL", icon: "database", category: "Database" },
-    { name: "MySQL", icon: "database", category: "Database" },
-    { name: "SQLite", icon: "database", category: "Database" },
-    { name: "Git", icon: "git", category: "DevOps" },
+    { name: "SQL", icon: "database", category: "Backend" },
+    { name: "MySQL", icon: "mysql", category: "Backend" },
+    { name: "SQLite", icon: "database", category: "Backend" },
+    { name: "Flask", icon: "flask", category: "Backend" },
+    { name: "Github", icon: "github", category: "DevOps" },
     { name: "Redux", icon: "redux", category: "Frontend" },
     { name: "GraphQL", icon: "graphql", category: "Frontend" },
+    { name: "npm", icon: "npm", category: "Frontend" },
     { name: "RESTful APIs", icon: "code", category: "Backend" },
     { name: "AWS", icon: "aws", category: "DevOps" },
-    { name: "Responsive Web Design", icon: "mobile alternate", category: "Frontend" },
     { name: "Webpack", icon: "cogs", category: "DevOps" },
     { name: "Babel", icon: "cogs", category: "DevOps" },
-    { name: "OAuth", icon: "lock", category: "Security" },
-    { name: "JWT", icon: "key", category: "Security" },
-    { name: "UI/UX Design Principles", icon: "paint brush", category: "Design" },
-    { name: "SEO", icon: "search", category: "Frontend" },
-    { name: "Data Structures and Algorithms", icon: "code branch", category: "Programming" }
+    { name: "OAuth", icon: "lock", category: "DevOps" },
+    { name: "JWT", icon: "key", category: "DevOps" },
+    { name: "Postman", icon: "postman", category: "DevOps" },
+    { name: "Render", icon: "render", category: "DevOps" },
+    { name: "Semantic UI", icon: "semanticui", category: "Frontend" },
+    { name: "SEO", icon: "search", category: "DevOps" },
+    { name: "VSCode", icon: "vscode", category: "DevOps" },
+    { name: "Data Structures and Algorithms", icon: "code branch", category: "DevOps" }
   ];
 
   const [showModal, setShowModal] = useState(false);
@@ -35,33 +46,46 @@ const Skills = ({ isMobile }) => {
     setShowModal(!showModal);
   };
 
+  const categories = Array.from(new Set(initialSkills.map(skill => skill.category)));
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 50,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
   return (
-    <Container>
-      <Header>Skills</Header>
-      <Grid columns={isMobile ? 1 : 2}>
-        {!isMobile && (
-          <Grid.Column width={3}>
-            <SkillsContainer>
-              {initialSkills.slice(0, 12).map((skill, index) => (
-                <SkillCard key={index}>
-                  <SkillIcon name={skill.icon} />
-                  <SkillName>{skill.name}</SkillName>
-                </SkillCard>
-              ))}
-              <MoreButton onClick={toggleModal}>
-                <Icon name='ellipsis horizontal' />
-              </MoreButton>
-            </SkillsContainer>
-          </Grid.Column>
-        )}
-        {isMobile && (
-          <Grid.Column width={16}>
-            <MoreButton onClick={toggleModal}>
-              <Icon name='ellipsis horizontal' /> Tech Stack
-            </MoreButton>
-          </Grid.Column>
-        )}
-      </Grid>
+     <Container>
+      <Header>Tech Stack</Header>
+      {/* <Grid>
+        <Grid.Column width={isMobile ? 16 : 8}> */}
+
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+            {initialSkills.slice(0,6).map((skill, index) => (
+             
+             <StackIcon name={skill.icon } style={{display: 'flex', flexDirection: 'row', fontSize: '2em'}}/>
+             
+              
+            ))}
+          
+          </div>
+          <MoreButton onClick={toggleModal} >
+         <Icon name='ellipsis horizontal' style={{display: 'contents'}}/> 
+          </MoreButton>
+          
+        {/* </Grid.Column>
+      </Grid> */}
       <Modal
         open={showModal}
         onClose={toggleModal}
@@ -69,16 +93,25 @@ const Skills = ({ isMobile }) => {
         size='small'
         centered
       >
-        <ModalHeader>Tech Stack</ModalHeader>
+        <ModalHeader>All Skills</ModalHeader>
         <ModalContent scrolling>
-          <SkillsList>
-            {initialSkills.map((skill, index) => (
-              <SkillCard key={index}>
-                <SkillIcon name={skill.icon} />
-                <SkillName>{skill.name}</SkillName>
-              </SkillCard>
-            ))}
-          </SkillsList>
+          {categories.map((category, index) => (
+            <div key={index} style={{display: 'flex', flexDirection: 'column'}}>
+              <CategoryHeader>{category}</CategoryHeader>
+              <SkillsList>
+                {initialSkills
+                  .filter(skill => skill.category === category)
+                  .map((skill, index) => (
+                    <div >
+                      <StackIcon name={skill.icon } style={{fontSize: '2em'}}/>
+                    </div>
+                     
+                      
+                   
+                  ))}
+              </SkillsList>
+            </div>
+          ))}
         </ModalContent>
       </Modal>
     </Container>
@@ -89,6 +122,7 @@ const Container = styled.div`
   padding: 40px;
   text-align: center;
   background-color: #E0F7FA; /* Light Blue */
+  border-radius: 10px
 `;
 
 const Header = styled.h2`
@@ -97,9 +131,39 @@ const Header = styled.h2`
   color: #4A90E2; /* Matches the gradient */
 `;
 
-const SkillsContainer = styled.div`
+const SkillSlide = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin: 0 10px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const SliderContainer = styled.div`
+  margin-bottom: 20px;
+  .slick-slider {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .slick-slide {
+    outline: none; /* Remove outline on slide focus */
+  }
+`;
+
+const CategoryHeader = styled.h3`
+  margin-bottom: 20px;
+  color: #00796B; /* Darker Teal */
   text-align: center;
+  padding-left: 10px;
 `;
 
 const SkillCard = styled.div`
@@ -111,8 +175,7 @@ const SkillCard = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
-  margin-bottom: 10px;
-  width: auto;
+  margin: 10px;
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -122,7 +185,7 @@ const SkillCard = styled.div`
 const SkillIcon = styled(Icon)`
   &&& {
     font-size: 2em;
-    color: #4A90E2;
+    
   }
 `;
 

@@ -65,11 +65,11 @@ const NavBar = () => {
             <img src="/AustinLogo5.jpg" alt="Logo" style={{ height: '50px', width: '188px', objectFit: 'cover' }} />
           </Menu.Item>
           <Menu.Menu position="right">
-            <Menu.Item as={Link} to="/projects" onClick={() => handleItemClick('/projects')}>Projects</Menu.Item>
-            <Menu.Item as={Link} to="/work-experience" onClick={() => handleItemClick('/work-experience')}>Experience</Menu.Item>
-            <Menu.Item as={Link} to="/blog" onClick={() => handleItemClick('/blog')}>Blog</Menu.Item>
-            <Menu.Item as={Link} to="/aesir" onClick={() => handleItemClick('/aesir')}>Aesir</Menu.Item>
-            <Menu.Item as={Link} to="/contact" onClick={() => handleItemClick('/contact')}>Contact</Menu.Item>
+            <Menu.Item as={Link} to="/projects" onClick={() => handleItemClick('/projects')}><Icon name="code" /> Projects</Menu.Item>
+            <Menu.Item as={Link} to="/work-experience" onClick={() => handleItemClick('/work-experience')}><Icon name="briefcase" /> Experience</Menu.Item>
+            <Menu.Item as={Link} to="/blog" onClick={() => handleItemClick('/blog')}><Icon name="newspaper" /> Blog</Menu.Item>
+            <Menu.Item as={Link} to="/aesir" onClick={() => handleItemClick('/aesir')}><Icon name="globe" /> Aesir</Menu.Item>
+            <Menu.Item as={Link} to="/contact" onClick={() => handleItemClick('/contact')}><Icon name="mail" /> Contact</Menu.Item>
           </Menu.Menu>
         </Menu>
       )}

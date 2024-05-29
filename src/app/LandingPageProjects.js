@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Card, Image, Icon } from 'semantic-ui-react';
+import { Container, Card, Image, Icon, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
 
-const Projects = () => {
+const LandingPageProjects = () => {
   const projectsData = [
     {
       id: 1,
@@ -84,11 +84,28 @@ const Projects = () => {
     }
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <StyledContainer>
-      <StyledSection id="projects">
+      <StyledSection>
         <StyledHeader>My Projects</StyledHeader>
-        <StyledCardGroup itemsPerRow={3} stackable>
+        <Slider {...settings}>
           {projectsData.map((project) => (
             <StyledCard key={project.id} href={project.link} target="_blank">
               <StyledImage src={project.image} wrapped ui={false} />
@@ -99,11 +116,15 @@ const Projects = () => {
                   {project.technologies.map((technology, index) => (
                     <StyledIcon key={index} name={getIconForTechnology(technology)} title={technology} />
                   ))}
+                  <Button primary as='a' href="/projects" style={{backgroundColor: '#00d8ff',
+    color: '#fff', }}>
+                                View Project
+                              </Button>
                 </StyledCardMeta>
               </Card.Content>
             </StyledCard>
           ))}
-        </StyledCardGroup>
+        </Slider>
       </StyledSection>
     </StyledContainer>
   );
@@ -111,16 +132,20 @@ const Projects = () => {
 
 const StyledContainer = styled(Container)`
   padding: 40px;
+  
 `;
 
 const StyledSection = styled.section`
   text-align: center;
+
+  border-radius: 10px;
 `;
 
 const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
   color: #4a90e2; /* Blue color for header */
+ 
 `;
 
 const StyledCardGroup = styled(Card.Group)`
@@ -128,6 +153,7 @@ const StyledCardGroup = styled(Card.Group)`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    border-radius: 10px;
   }
 `;
 
@@ -179,4 +205,4 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-export default Projects;
+export default LandingPageProjects;

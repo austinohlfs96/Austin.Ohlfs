@@ -1,49 +1,132 @@
-import React, { useState, useEffect } from 'react';
-import { Grid, Icon } from 'semantic-ui-react'; // Assuming you're using Semantic UI for styling
+import React from 'react';
+import { Grid, Icon, Card, Image, Button } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashnode } from '@fortawesome/free-brands-svg-icons';
+import Slider from 'react-slick';
 import Skills from './Skills'; // Adjust the import according to your project structure
-import IntroductionSection from './IntroSection';
+
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+import LandingPageProjects from './LandingPageProjects';
+
 
 const MainSection = ({ isMobile }) => {
-  
+  const projects = [
+    {
+      id: 1,
+      title: 'AESIR Speed Techs',
+      description: 'A brief description of project one.',
+      imageUrl: '/AESIRSite.png',
+      link: 'https://github.com/yourusername/project-one',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+    },
+    {
+      id: 2,
+      title: 'AAA Madlibs',
+      description: 'A brief description of project one.',
+      imageUrl: '/Designer.png',
+      link: 'https://github.com/yourusername/project-one',
+      technologies: ['Vue.js', 'Django', 'SQLite'],
+    },
+    {
+      id: 3,
+      title: 'Pokemon Card Shop',
+      description: 'A brief description of project one.',
+      imageUrl: '/ABACardShop.png',
+      link: 'https://github.com/yourusername/project-one',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+    },
+    {
+      id: 4,
+      title: 'BackYard Fantasy Football',
+      description: 'A brief description of project two.',
+      imageUrl: '/BacKYardFantasyFootBall.png',
+      link: 'https://github.com/yourusername/project-two',
+      technologies: ['React Native', 'Express', 'MongoDB'],
+    },
+    {
+      id: 5,
+      title: 'Date-smith',
+      description: 'A brief description of project two.',
+      imageUrl: '/DateSmith.png',
+      link: 'https://github.com/yourusername/project-two',
+      technologies: ['Angular', 'Express', 'PostgreSQL'],
+    },
+    // Add more projects as needed
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <main style={styles.main}>
-      <Grid columns={2} style={styles.grid}>
-        {!isMobile && (
-          <Grid.Column width={3}>
-            <Skills isMobile={false} />
-          </Grid.Column>
-        )}
-        <Grid.Column width={isMobile ? 16 : 13}>
           <div className="section-container" style={styles.sectionContainer}>
-            
             <section id="about">
               <div className="container" style={styles.container}>
                 <section id="introduction">
                   <div className="container" style={styles.introContainer}>
                     <h2 style={styles.heading}>Introduction</h2>
-                    <p style={styles.paragraph}>Hello and welcome to my corner of the digital universe! I'm Austin, a Colorado native with a passion for both coding and carving through fresh powder on the slopes. With over a decade of experience honing skis and snowboards in the picturesque town of Vail, I've learned the importance of precision, attention to detail, and the thrill of mastering a craft.</p>
-                    <p style={styles.paragraph}>Transitioning from mountains to code, I bring that same dedication and expertise to my work as a full-stack software engineer. Specializing in crafting dynamic webpages and software solutions, I thrive on leveraging technology to drive business growth and efficiency.</p>
-                    <p style={styles.paragraph}>Here, you'll find a showcase of my projects, each meticulously designed to not only meet but exceed client expectations. From responsive web designs to scalable software applications, I'm committed to delivering solutions that empower businesses to thrive in the digital landscape.</p>
-                    <p style={styles.paragraph}>So, whether you're navigating the slopes or navigating the web, let's embark on a journey of innovation together. Let's harness the power of technology to elevate your business to new heights.</p>
+                    <p style={styles.paragraph}>Welcome to my digital universe! I'm Austin, a Colorado native passionate about coding and carving through fresh powder on the slopes.</p>
                   </div>
                 </section>
-                {isMobile && (
+
+                <section id="transition">
+                  <div className="container" style={styles.subContainer}>
+                    <h3 style={styles.subHeading}>From Mountains to Code</h3>
+                    <p style={styles.paragraph}>With over a decade of experience honing skis and snowboards in Vail, I've mastered precision and attention to detail. Now, I bring that same dedication to my work as a full-stack software engineer.</p>
+                  </div>
+                </section>
+
+                <section id="specialization">
+                  <div className="container" style={styles.subContainer}>
+                    <h3 style={styles.subHeading}>Specialization</h3>
+                    <p style={styles.paragraph}>I specialize in crafting dynamic webpages and software solutions, leveraging technology to drive business growth and efficiency.</p>
+                    {!isMobile && (
+                  <div style={styles.skillsContainer}>
+                    <Skills isMobile={false} />
+                  </div>
+                )}
+                  {isMobile && (
                   <div style={styles.skillsContainer}>
                     <Skills isMobile={true} />
                   </div>
                 )}
+                  </div>
+                  
+                </section>
+
+               
+                <LandingPageProjects/>
+
+                <section id="collaboration">
+                  <div className="container" style={styles.subContainer}>
+                    <h3 style={styles.subHeading}>Let's Collaborate</h3>
+                    <p style={styles.paragraph}>Whether you're navigating the slopes or the web, let's innovate together. Let's harness technology to elevate your business.</p>
+                  </div>
+                </section>
+
+                
               </div>
             </section>
           </div>
-          
-        </Grid.Column>
-      </Grid>
-      <section id="contact">
+      <section id="contact" style={styles.contactSection}>
         <div className="container" style={styles.contactContainer}>
           <h2 style={styles.heading}>Contact Me</h2>
-          <p style={styles.paragraph}>If you have any questions or would like to discuss potential opportunities, feel free to reach out to me:</p>
+          <p style={styles.paragraph}>Have questions or opportunities? Reach out:</p>
           <ul style={styles.contactList}>
             <li style={styles.contactItem}>Email: ohlfsam96@gmail.com</li>
             <li style={styles.contactItem}>Phone: (303) 257-3882</li>
@@ -61,22 +144,22 @@ const MainSection = ({ isMobile }) => {
 
 const styles = {
   main: {
-    marginLeft: '10px',
-    marginRight: '10px',
+    margin: '0 auto',
+    maxWidth: '1200px',
+    padding: '20px',
     fontFamily: 'Arial, sans-serif',
     color: '#333',
     background: '#f9f9f9',
   },
   grid: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
+    margin: '0 auto',
+    justifyContent: 'space-between',
   },
   sectionContainer: {
     padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    background: 'linear-gradient(to right, #4A90E2, #58B3D3)',
+    borderRadius: '12px',
+    background: 'linear-gradient(to right, #232526, #414345)',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
   },
   container: {
     marginBottom: '20px',
@@ -84,31 +167,54 @@ const styles = {
   introContainer: {
     padding: '20px',
     borderRadius: '8px',
-    background: '#e0e0e0',
+    background: '#333',
     boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.12)',
+    color: '#fff',
+  },
+  subContainer: {
+    padding: '15px',
+    borderRadius: '8px',
+    background: '#444',
+    marginBottom: '15px',
   },
   heading: {
     fontSize: '2rem',
-    color: '#4A90E2',
+    color: '#00d8ff',
     marginBottom: '15px',
+    textTransform: 'uppercase',
+  },
+  subHeading: {
+    fontSize: '1.5rem',
+    color: '#00d8ff',
+    marginBottom: '10px',
   },
   paragraph: {
     fontSize: '1rem',
     lineHeight: '1.6',
     marginBottom: '15px',
-    color: '#666',
+    color: '#ddd',
+  },
+  projectColumn: {
+    marginBottom: '20px',
+  },
+  button: {
+    backgroundColor: '#00d8ff',
+    color: '#fff',
   },
   skillsContainer: {
     textAlign: 'center',
     marginTop: '20px',
   },
+  contactSection: {
+    marginTop: '40px',
+  },
   contactContainer: {
     textAlign: 'center',
-    padding: '20px',
+    padding: '30px',
     borderRadius: '8px',
-    background: '#fff',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    marginTop: '20px',
+    background: '#232526',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+    color: '#fff',
   },
   contactList: {
     listStyle: 'none',
@@ -125,7 +231,7 @@ const styles = {
     marginTop: '20px',
   },
   icon: {
-    color: '#4A90E2',
+    color: '#00d8ff',
     cursor: 'pointer',
   },
 };
