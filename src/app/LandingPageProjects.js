@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Card, Image, Icon, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
@@ -8,6 +9,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const LandingPageProjects = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/projects', { replace: true });
+    window.scrollTo(0, 0);
+  };
+
   const projectsData = [
     {
       id: 1,
@@ -116,7 +124,7 @@ const LandingPageProjects = () => {
         <StyledHeader>My Projects</StyledHeader>
         <Slider {...settings}>
           {projectsData.map((project) => (
-            <StyledCard key={project.id} href="/projects" >
+            <StyledCard key={project.id} onClick={handleClick}>
               <StyledImage src={project.image} wrapped ui={false} />
               <Card.Content style={{display: 'flex', flexDirection: 'column'}}>
                 <StyledCardHeader>{project.title}</StyledCardHeader>
@@ -126,7 +134,7 @@ const LandingPageProjects = () => {
                     <StackIcon key={index} name={getIconForTechnology(technology)} title={technology} style={{ width: '20px', height: '20px' }}/>
                   ))}
                 </StyledCardMeta>
-                <Button primary as='a' href="/projects" style={{backgroundColor: '#4a90e2',
+                <Button primary as='a' onClick={() => navigate(`/projects`)} style={{backgroundColor: '#4a90e2',
                   color: '#fff', }}>
                   View Project
                 </Button>

@@ -120,10 +120,10 @@ const Projects = () => {
         <StyledHeader>My Projects</StyledHeader>
         <StyledCardGroup itemsPerRow={3} stackable>
           {projectsData.map((project) => (
-            <StyledCard key={project.id} onClick={() => handleOpenModal(project)}>
+            <StyledCard key={project.id}  onClick={() => handleOpenModal(project)}>
               <StyledImage src={project.images[0]} wrapped ui={false} />
               <Card.Content>
-                <StyledCardHeader>{project.title}</StyledCardHeader>
+                <StyledCardHeader id={project.id}>{project.title}</StyledCardHeader>
                 <StyledCardDescription>{project.description}</StyledCardDescription>
                 <StyledCardMeta>
                   {project.technologies.map((technology, index) => (
