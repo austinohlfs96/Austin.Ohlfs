@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Card, Image, Icon, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
+import StackIcon from "tech-stack-icons"; 
 
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
@@ -11,52 +12,54 @@ const LandingPageProjects = () => {
     {
       id: 1,
       title: 'AESIR Speed Techs',
-      description: 'A brief description of project one.',
+      description: 'Website and booking software for AESIR Speed Techs.',
       image: '/AESIRSite.png',
-      link: 'https://github.com/yourusername/project-one',
-      technologies: ['React', 'Node.js', 'MongoDB'],
+      link: '/projects',
+      technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
     },
     {
       id: 2,
       title: 'AAA Madlibs',
-      description: 'A brief description of project one.',
+      description: 'Backend CLI Madlib Game.',
       image: 'Designer.png',
-      link: 'https://github.com/yourusername/project-one',
-      technologies: ['Vue.js', 'Django', 'SQLite'],
+      link: '/projects',
+      technologies: ['Python', 'Mysql'],
     },
     {
       id: 3,
       title: 'Pokemon Card Shop',
-      description: 'A brief description of project one.',
+      description: 'Pokemon card e-commerce model.',
       image: 'ABACardShop.png',
       link: 'https://github.com/yourusername/project-one',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      technologies: [ 'JavaScript', 'Bootstrap', 'JSON'],
     },
     {
       id: 4,
       title: 'BackYard Fantasy Football',
-      description: 'A brief description of project two.',
+      description: 'Backyard fantasy fotball game.',
       image: '/BacKYardFantasyFootBall.png',
       link: 'https://github.com/yourusername/project-two',
-      technologies: ['React Native', 'Express', 'MongoDB'],
+      technologies: ['React', 'CSS', 'JSON'],
     },
-    {
-      id: 5,
-      title: 'Date-smith',
-      description: 'A brief description of project two.',
-      image: 'DateSmith.png',
-      link: 'https://github.com/yourusername/project-two',
-      technologies: ['Angular', 'Express', 'PostgreSQL'],
-    },
+    // {
+    //   id: 5,
+    //   title: 'Date-smith',
+    //   description: 'Match making project.',
+    //   image: 'DateSmith.png',
+    //   link: 'https://github.com/yourusername/project-two',
+    //   technologies: ['React', 'Python', 'Mysql', 'CSS'],
+    // },
     // Add more projects as needed
   ];
 
   const getIconForTechnology = (technology) => {
     switch (technology.toLowerCase()) {
       case 'react':
-        return 'react';
+        return 'reactjs';
       case 'node.js':
         return 'node js';
+        case 'flask':
+        return 'flask';
       case 'mongodb':
         return 'database';
       case 'angular':
@@ -64,21 +67,27 @@ const LandingPageProjects = () => {
       case 'express':
         return 'server';
       case 'postgresql':
-        return 'database';
+        return 'postgresql';
       case 'vue.js':
         return 'vuejs';
-      case 'django':
+      case 'python':
         return 'python';
-      case 'sqlite':
-        return 'database';
-      case 'react native':
-        return 'react';
+      case 'mysql':
+        return 'mysql';
+      case 'redux':
+        return 'redux';
       case 'html':
         return 'html5';
       case 'css':
-        return 'css3 alternate';
+        return 'css3';
+      case 'bootstrap':
+        return 'bootstrap5';
       case 'javascript':
         return 'js';
+        case 'semanticui':
+        return 'semanticui';
+        case 'json':
+        return 'json';
       default:
         return 'code';
     }
@@ -107,14 +116,14 @@ const LandingPageProjects = () => {
         <StyledHeader>My Projects</StyledHeader>
         <Slider {...settings}>
           {projectsData.map((project) => (
-            <StyledCard key={project.id} href={project.link} target="_blank">
+            <StyledCard key={project.id} href="/projects" >
               <StyledImage src={project.image} wrapped ui={false} />
               <Card.Content style={{display: 'flex', flexDirection: 'column'}}>
                 <StyledCardHeader>{project.title}</StyledCardHeader>
                 <StyledCardDescription>{project.description}</StyledCardDescription>
                 <StyledCardMeta>
                   {project.technologies.map((technology, index) => (
-                    <StyledIcon key={index} name={getIconForTechnology(technology)} title={technology} />
+                    <StackIcon key={index} name={getIconForTechnology(technology)} title={technology} style={{ width: '20px', height: '20px' }}/>
                   ))}
                 </StyledCardMeta>
                 <Button primary as='a' href="/projects" style={{backgroundColor: '#4a90e2',
