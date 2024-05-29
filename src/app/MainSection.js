@@ -87,7 +87,7 @@ const MainSection = ({ isMobile }) => {
                 <section id="transition">
                   <div className="container" style={styles.subContainer}>
                     <h3 style={styles.subHeading}>From Mountains to Code</h3>
-                    <p style={styles.paragraph}>With over a decade of experience honing skis and snowboards in Vail, I've mastered precision and attention to detail. Now, I bring that same dedication to my work as a full-stack software engineer.</p>
+                    <p style={styles.paragraph}>With over a decade of experience tuning skis and snowboards in Vail, I've mastered precision and attention to detail. Now, I bring that same dedication to my work as a full-stack software engineer.</p>
                   </div>
                 </section>
 
@@ -112,7 +112,7 @@ const MainSection = ({ isMobile }) => {
                
                 <LandingPageProjects/>
 
-                <section id="collaboration">
+                <section id="introduction">
                   <div className="container" style={styles.subContainer}>
                     <h3 style={styles.subHeading}>Let's Collaborate</h3>
                     <p style={styles.paragraph}>Whether you're navigating the slopes or the web, let's innovate together. Let's harness technology to elevate your business.</p>

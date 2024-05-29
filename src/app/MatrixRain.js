@@ -20,7 +20,7 @@ const MatrixRain = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Semi-transparent text
-      ctx.fillStyle = 'rgba(128, 128, 128, 0.6)'; // Adjust alpha value for transparency
+      ctx.fillStyle = 'rgba(0, 216, 255, 0.6)'; // Adjust alpha value for transparency
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -34,12 +34,12 @@ const MatrixRain = () => {
       }
     };
 
-    const interval = setInterval(draw, 33);
+    const interval = setInterval(draw, 50); // Adjusted interval for slower drops
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, []); // Empty dependency array to run the effect only once
 
   return <canvas id="matrix"></canvas>;
 };
