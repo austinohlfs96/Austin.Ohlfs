@@ -168,6 +168,8 @@ const StyledCardMeta = styled(Card.Meta)`
 
 const StyledIcon = styled(Icon)`
   &&& {
+    display: flex;
+    flex-direction: row;
     margin: 0 5px;
     color: #4a90e2; /* Blue icon color */
     font-size: 1.2em;

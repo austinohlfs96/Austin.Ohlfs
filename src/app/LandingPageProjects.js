@@ -109,18 +109,18 @@ const LandingPageProjects = () => {
           {projectsData.map((project) => (
             <StyledCard key={project.id} href={project.link} target="_blank">
               <StyledImage src={project.image} wrapped ui={false} />
-              <Card.Content>
+              <Card.Content style={{display: 'flex', flexDirection: 'column'}}>
                 <StyledCardHeader>{project.title}</StyledCardHeader>
                 <StyledCardDescription>{project.description}</StyledCardDescription>
                 <StyledCardMeta>
                   {project.technologies.map((technology, index) => (
                     <StyledIcon key={index} name={getIconForTechnology(technology)} title={technology} />
                   ))}
-                  <Button primary as='a' href="/projects" style={{backgroundColor: '#00d8ff',
-    color: '#fff', }}>
-                                View Project
-                              </Button>
                 </StyledCardMeta>
+                <Button primary as='a' href="/projects" style={{backgroundColor: '#4a90e2',
+                  color: '#fff', }}>
+                  View Project
+                </Button>
               </Card.Content>
             </StyledCard>
           ))}
@@ -195,6 +195,7 @@ const StyledCardMeta = styled(Card.Meta)`
 const StyledIcon = styled(Icon)`
   &&& {
     margin: 0 5px;
+    margin-bottom: 20px;
     color: #4a90e2; /* Blue icon color */
     font-size: 1.2em;
     transition: transform 0.3s ease-in-out;

@@ -128,9 +128,8 @@ const Container = styled.div`
 const Header = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
-  -webkit-background-clip: text;
-  color: transparent;`;
+  color: #fff; /* White text color for header */
+`;
 
 const SkillSlide = styled.div`
   display: flex;
@@ -162,7 +161,7 @@ const SliderContainer = styled.div`
 
 const CategoryHeader = styled.h3`
   margin-bottom: 20px;
-  color: #00796B; /* Darker Teal */
+  color: #fff; /* Darker Teal */
   text-align: center;
   padding-left: 10px;
 `;
@@ -198,25 +197,18 @@ const SkillName = styled.span`
 
 const MoreButton = styled(Button)`
   &&& {
-    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Darker Teal */
-    color: #FFFFFF; /* White */
-    transition: background 0.5s;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for button */
+    color: #fff; /* White text color for button */
     margin-top: 20px;
-
-    &:hover {
-      background-color: #004D40; /* Darker Darker Teal */
-      color: #FFFFFF; /* White */
-    }
   }
 `;
 
 const ModalHeader = styled(Modal.Header)`
   &&& {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    color: #27f5f5;
+    background: linear-gradient(45deg, rgb(182 189 198), #2a75b3); /* Semi-transparent background for modal header */
+    color: #fff; /* White text color for modal header */
     text-align: center;
     font-size: 1.5em;
-    border-bottom: 1px solid #27f5f5;
   }
 `;
 
