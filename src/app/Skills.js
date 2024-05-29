@@ -121,15 +121,16 @@ const Skills = ({ isMobile }) => {
 const Container = styled.div`
   padding: 40px;
   text-align: center;
-  background-color: #E0F7FA; /* Light Blue */
+  background: linear-gradient(45deg, rgb(182 189 198), #2a75b3);
   border-radius: 10px
 `;
 
 const Header = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #4A90E2; /* Matches the gradient */
-`;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent;`;
 
 const SkillSlide = styled.div`
   display: flex;
@@ -197,7 +198,7 @@ const SkillName = styled.span`
 
 const MoreButton = styled(Button)`
   &&& {
-    background-color: #00796B; /* Darker Teal */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Darker Teal */
     color: #FFFFFF; /* White */
     transition: background 0.5s;
     margin-top: 20px;
@@ -211,7 +212,7 @@ const MoreButton = styled(Button)`
 
 const ModalHeader = styled(Modal.Header)`
   &&& {
-    background: #0d0d0d;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: #27f5f5;
     text-align: center;
     font-size: 1.5em;
@@ -221,7 +222,7 @@ const ModalHeader = styled(Modal.Header)`
 
 const ModalContent = styled(Modal.Content)`
   &&& {
-    background: #0d0d0d;
+    background: linear-gradient(45deg, rgb(182 189 198), #2a75b3);
     color: #fff;
   }
 `;
