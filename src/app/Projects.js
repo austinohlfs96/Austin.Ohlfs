@@ -3,6 +3,10 @@ import { Container, Card, Image, Modal, Button, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import StackIcon from "tech-stack-icons";
 import MatrixRain from './MatrixRain';
+import Slider from 'react-slick';
+
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -26,7 +30,7 @@ const Projects = () => {
       id: 1,
       title: 'AESIR Speed Techs',
       description: 'Website and booking software for AESIR Speed Techs.',
-      images: ['/AESIRSite2.png', '/AESIRServices.png'], // Add more image paths here
+      images: ['/AESIRSite2.png', '/AESIRServices.png', 'AESIRMobile.png'], // Add more image paths here
       link: 'https://capstone-deploy-14pb.onrender.com',
       technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
       features: 'Real-time updates, User Authentication, Responsive Design',
@@ -37,7 +41,7 @@ const Projects = () => {
       id: 2,
       title: 'Pokemon Card Shop',
       description: 'Pokemon card e-commerce model.',
-      images: ['ABACardShop.png', 'ABACardShop2.png'], // Add more image paths here
+      images: ['ABALight.png', 'ABACardShop.png', 'PokemonCart.png'], // Add more image paths here
       link: 'https://github.com/anthonyBosek/table-two-phase-one-project',
       technologies: ['JavaScript', 'Bootstrap', 'JSON'],
       features: 'E-commerce functionality, Dynamic content loading',
@@ -129,6 +133,23 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <StyledContainer id='projectContainer' >
       <div className="matrix-rain-container">
@@ -160,11 +181,16 @@ const Projects = () => {
         <StyledModal open={true} onClose={handleCloseModal}>
           <Modal.Header style={{textAlign: 'center'}}>{selectedProject.title}</Modal.Header>
           <Modal.Content image scrolling>
-            <Image.Group size='medium'>
+          <Image.Group>
+              <Slider {...settings}>
               {selectedProject.images.map((image, index) => (
-                <Image key={index} src={image} wrapped />
+                <div key={index}>
+                  <Image src={image} wrapped />
+                </div>
               ))}
+            </Slider>
             </Image.Group>
+
             <Modal.Description>
               <StyledModalDescription>
                 <p><strong>Description:</strong> {selectedProject.description}</p>
