@@ -204,7 +204,7 @@ const Projects = () => {
           <Slider {...settings} style={{display: 'grid'}}>
               {selectedProject.images.map((image, index) => (
                 <div key={index}>
-                  <Image src={image.src} wrapped />
+                  <Image src={image.src} wrapped  style={{marginBottom: '0px', borderRadius: '10px', boxShadow: '0 6px 12px rgba(0, 0, 0, 0.6)'}}/>
                   <p>{image.description}</p>
                 </div>
                 
@@ -393,7 +393,7 @@ const StyledModal = styled(Modal)`
       color: #ffffff;
       img {
         border-radius: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
       }
     }
     .actions {
