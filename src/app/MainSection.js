@@ -131,9 +131,9 @@ const MainSection = ({ isMobile }) => {
             <li style={styles.contactItem}>Email: ohlfsam96@gmail.com</li>
             <li style={styles.contactItem}>Phone: (303) 257-3882</li>
             <li style={styles.contactIcons}>
-              <Icon name='github' size='large' style={styles.icon} link onClick={() => window.open('https://github.com/your-github-username', '_blank')} />
-              <FontAwesomeIcon icon={faHashnode} size="lg" style={styles.icon} />
-              <Icon name='linkedin' size='large' style={styles.icon} link onClick={() => window.open('https://www.linkedin.com/in/your-linkedin-username', '_blank')} />
+              <Icon name='github' size='large' style={styles.icon} link onClick={() => window.open('https://github.com/austinohlfs96', '_blank')} />
+              <FontAwesomeIcon icon={faHashnode} size="lg" style={styles.icon} link onClick={() => window.open('https://austinohlfs.hashnode.dev', '_blank')} />
+              <Icon name='linkedin' size='large' style={styles.icon} link onClick={() => window.open('https://www.linkedin.com/in/austinohlfs', '_blank')} />
             </li>
           </ul>
         </div>
