@@ -23,7 +23,7 @@ const MatrixRain = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Semi-transparent text
-      ctx.fillStyle = 'rgba(0, 216, 255, 0.6)'; // Adjust alpha value for transparency
+      ctx.fillStyle = 'rgba(0, 216, 255, 0.75)'; // Adjust alpha value for transparency
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
