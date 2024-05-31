@@ -25,7 +25,7 @@ const Projects = () => {
     {
       id: 1,
       title: 'AESIR Speed Techs',
-      description: 'A brief description of project one.',
+      description: 'Website and booking software for AESIR Speed Techs.',
       images: ['/AESIRSite2.png', '/AESIRServices.png'], // Add more image paths here
       link: 'https://capstone-deploy-14pb.onrender.com',
       technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
@@ -36,7 +36,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'Pokemon Card Shop',
-      description: 'A brief description of project one.',
+      description: 'Pokemon card e-commerce model.',
       images: ['ABACardShop.png', 'ABACardShop2.png'], // Add more image paths here
       link: 'https://github.com/anthonyBosek/table-two-phase-one-project',
       technologies: ['JavaScript', 'Bootstrap', 'JSON'],
@@ -47,7 +47,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'BackYard Fantasy Football',
-      description: 'A brief description of project two.',
+      description: 'Backyard fantasy fotball game.',
       images: ['/BacKYardFantasyFootBall.png', '/BacKYardFantasyFootBall2.png'], // Add more image paths here
       link: 'https://github.com/isaacsong1/Backyard-Fantasy-Football',
       technologies: ['React', 'CSS', 'JSON'],
@@ -58,7 +58,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'Date-smith',
-      description: 'A brief description of project two.',
+      description: 'Match making project.',
       images: ['DateSmith.png', 'DateSmith2.png'], // Add more image paths here
       link: 'https://github.com/isaacwilhite/table-3-phase-4-project',
       technologies: ['React', 'Python', 'Mysql', 'CSS'],
@@ -69,7 +69,7 @@ const Projects = () => {
     {
       id: 5,
       title: 'AAA Madlibs',
-      description: 'A brief description of project one.',
+      description: 'Backend CLI Madlib Game.',
       images: ['Designer.png', 'Designer2.png'], // Add more image paths here
       link: 'https://github.com/anthonyBosek/madlibs',
       technologies: ['Python', 'Mysql'],
@@ -158,7 +158,7 @@ const Projects = () => {
 
       {selectedProject && (
         <StyledModal open={true} onClose={handleCloseModal}>
-          <Modal.Header>{selectedProject.title}</Modal.Header>
+          <Modal.Header style={{textAlign: 'center'}}>{selectedProject.title}</Modal.Header>
           <Modal.Content image scrolling>
             <Image.Group size='medium'>
               {selectedProject.images.map((image, index) => (
@@ -171,14 +171,19 @@ const Projects = () => {
                 <p><strong>Features:</strong> {selectedProject.features}</p>
                 <p><strong>Challenges:</strong> {selectedProject.challenges}</p>
                 <p><strong>Learnings:</strong> {selectedProject.learnings}</p>
-                <p><strong>Technologies Used:</strong>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <p style={{display: 'flex', flexDirection: 'column', textAlign: 'center'}}><strong>Technologies Used:</strong>
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                   {selectedProject.technologies.map((technology, index) => (
-                    <span key={index}>
+                    <span key={index} style={{display: 'flex', flexDirection: 'column'}}>
                       {' '}
                       <StackIcon name={getIconForTechnology(technology)} title={technology} /> {technology}
                     </span>
                   ))}
+                  </div>
                 </p>
+                </div>
+                
               </StyledModalDescription>
             </Modal.Description>
           </Modal.Content>
