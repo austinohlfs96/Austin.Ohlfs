@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { request } from 'graphql-request';
 import { Segment, Image } from 'semantic-ui-react';
 import NavBar from './NavBar';
-import Footer from './Footer';
-
+import Footer from './Footer'
 const API_KEY = 'f90d2070-2844-420f-8391-be56993b8389'; // Replace with your actual Hashnode API key
 
 const Blog = () => {
@@ -59,17 +58,18 @@ const Blog = () => {
         <Segment.Group>
           {blogs.map(blog => (
             <BlogItem key={blog.url}>
+              <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', alignItems: 'center', width: '100%' }}>
               <BlogImage src={blog.coverImage.url} alt="Thumbnail" />
+              <BlogTitle style={{textAlign: 'center', fontSize: '200%'}}><strong>{blog.title}</strong></BlogTitle>
+              </div>
               <BlogContent>
-                <BlogTitle>{blog.title}</BlogTitle>
                 <BlogBrief>{blog.brief}</BlogBrief>
-                <BlogLink href={blog.url} target="_blank" rel="noopener noreferrer">Read more</BlogLink>
+                <BlogLink href={blog.url} target="_blank" rel="noopener noreferrer">Read more...</BlogLink>
               </BlogContent>
             </BlogItem>
           ))}
         </Segment.Group>
       </StyledSection>
-      <Footer />
     </StyledContainer>
   );
 };
@@ -107,7 +107,7 @@ const BlogItem = styled.div`
   align-items: center;
   flex-wrap: wrap;
   background-color: #1e1e1e;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -123,7 +123,6 @@ const BlogImage = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  margin-right: 20px;
 `;
 
 const BlogContent = styled.div`
@@ -133,6 +132,8 @@ const BlogContent = styled.div`
 const BlogTitle = styled.h2`
   font-size: 1.5em;
   color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap
 `;
 
 const BlogBrief = styled.p`
@@ -142,7 +143,7 @@ const BlogBrief = styled.p`
 
 const BlogLink = styled.a`
   color: #2575fc;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s ease;
 
   &:hover {

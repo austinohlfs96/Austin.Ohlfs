@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Image } from 'semantic-ui-react';
 import NavBar from './NavBar';
-import Footer from './Footer';
+
 
 const WorkExp = () => {
   return (
@@ -137,7 +137,6 @@ const WorkExp = () => {
           </JobExperience>
         </div>
       </StyledSection>
-      <Footer />
     </StyledContainer>
   );
 };

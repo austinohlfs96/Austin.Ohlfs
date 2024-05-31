@@ -244,6 +244,17 @@ const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
   color: #00e6e6;
+  animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00e6e6, 0 0 20px #00e6e6, 0 0 25px #00e6e6, 0 0 30px #00e6e6, 0 0 35px #00e6e6; }
+    to { text-shadow: 0 0 10px #fff, 0 0 20px #00e6e6, 0 0 30px #00e6e6, 0 0 40px #00e6e6, 0 0 50px #00e6e6, 0 0 60px #00e6e6, 0 0 70px #00e6e6; }
+  }
 `;
 
 const StyledCardGroup = styled(Card.Group)`
@@ -268,6 +279,8 @@ const StyledCard = styled(Card)`
     box-shadow: 0 8px 16px rgba(0, 230, 230, 0.1);
     height: 100%; /* Ensure each card takes the full height of its grid cell */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Add transition for smooth effect */
+    
+   
 
     &:hover {
       background: linear-gradient(145deg, rgba(0, 0, 255, 0.7), rgba(0, 255, 255, 0.5)) !important;
