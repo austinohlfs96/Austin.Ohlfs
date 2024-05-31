@@ -188,7 +188,7 @@ const Projects = () => {
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='blue' onClick={() => window.open(selectedProject.link, '_blank')}>
+            <Button onClick={() => window.open(selectedProject.link, '_blank')} style={{ background: '#00e6e6', color: 'white' }}>
               Visit Project <Icon name='external' />
             </Button>
             <Button onClick={handleCloseModal}>Close</Button>
@@ -270,6 +270,7 @@ const StyledCard = styled(Card)`
   &&& {
     display: flex;
     flex-direction: row;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 255, 0.7));
     align-items: center;
     width: 1000px !important;
     background: linear-gradient(145deg, rgba(0, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
