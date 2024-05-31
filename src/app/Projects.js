@@ -244,7 +244,7 @@ const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
   color: #00e6e6;
-  animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+ 
 
   @keyframes fadeIn {
     from { opacity: 0; }
