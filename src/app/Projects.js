@@ -62,7 +62,7 @@ const Projects = () => {
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
       images: [
-        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'BackYardFantasyFootball.png', description: 'Description for ABALight' },
         { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
         { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
@@ -77,7 +77,7 @@ const Projects = () => {
       title: 'Date-smith',
       description: 'Match making project.',
       images: [
-        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'DateSmith.png', description: 'Description for ABALight' },
         { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
         { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
@@ -92,7 +92,7 @@ const Projects = () => {
       title: 'AAA Madlibs',
       description: 'Backend CLI Madlib Game.',
       images: [
-        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'Designer.png', description: 'Description for ABALight' },
         { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
         { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
@@ -197,10 +197,10 @@ const Projects = () => {
           <Modal.Content image scrolling>
           <Image.Group style={{display: 'flex', justifyContent: 'center' }}>
           <Slider {...settings} style={{display: 'grid'}}>
-              {selectedProject.images.map((src, index) => (
-                
+              {selectedProject.images.map((image, index) => (
                 <div key={index}>
-                  <Image src={src} wrapped />
+                  <Image src={image.src} wrapped />
+                  <p>{image.description}</p>
                 </div>
                 
               ))}
