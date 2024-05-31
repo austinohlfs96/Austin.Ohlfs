@@ -30,7 +30,12 @@ const Projects = () => {
       id: 1,
       title: 'AESIR Speed Techs',
       description: 'Website and booking software for AESIR Speed Techs.',
-      images: ['/AESIRSite2.png', '/AESIRServices.png', 'AESIRMobile.png'], // Add more image paths here
+      images: ['', '/AESIRServices.png', 'AESIRMobile.png'],
+      images: [
+        { src: '/AESIRSite2.png', description: 'Description for ABALight' },
+        { src: '/AESIRServices.png', description: 'Description for ABACardShop' },
+        { src: 'AESIRMobile.png', description: 'Description for PokemonCart' },
+      ],
       link: 'https://capstone-deploy-14pb.onrender.com',
       technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
       features: 'Real-time updates, User Authentication, Responsive Design',
@@ -41,7 +46,11 @@ const Projects = () => {
       id: 2,
       title: 'Pokemon Card Shop',
       description: 'Pokemon card e-commerce model.',
-      images: ['ABALight.png', 'ABACardShop.png', 'PokemonCart.png'], // Add more image paths here
+      images: [
+        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
+        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
+      ], // Add more image paths here
       link: 'https://github.com/anthonyBosek/table-two-phase-one-project',
       technologies: ['JavaScript', 'Bootstrap', 'JSON'],
       features: 'E-commerce functionality, Dynamic content loading',
@@ -52,7 +61,11 @@ const Projects = () => {
       id: 3,
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
-      images: ['/BacKYardFantasyFootBall.png', '/BacKYardFantasyFootBall2.png'], // Add more image paths here
+      images: [
+        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
+        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
+      ], // Add more image paths here
       link: 'https://github.com/isaacsong1/Backyard-Fantasy-Football',
       technologies: ['React', 'CSS', 'JSON'],
       features: 'Fantasy league management, Real-time scoring',
@@ -63,7 +76,11 @@ const Projects = () => {
       id: 4,
       title: 'Date-smith',
       description: 'Match making project.',
-      images: ['DateSmith.png', 'DateSmith2.png'], // Add more image paths here
+      images: [
+        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
+        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
+      ], // Add more image paths here
       link: 'https://github.com/isaacwilhite/table-3-phase-4-project',
       technologies: ['React', 'Python', 'Mysql', 'CSS'],
       features: 'Matchmaking algorithm, Secure user authentication',
@@ -74,7 +91,11 @@ const Projects = () => {
       id: 5,
       title: 'AAA Madlibs',
       description: 'Backend CLI Madlib Game.',
-      images: ['Designer.png', 'Designer2.png'], // Add more image paths here
+      images: [
+        { src: 'ABALight.png', description: 'Description for ABALight' },
+        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
+        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
+      ], // Add more image paths here
       link: 'https://github.com/anthonyBosek/madlibs',
       technologies: ['Python', 'Mysql'],
       features: 'Interactive story creation, Database integration',
@@ -137,18 +158,11 @@ const Projects = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
   };
+  
+  
 
   return (
     <StyledContainer id='projectContainer' >
@@ -161,7 +175,7 @@ const Projects = () => {
         <StyledCardGroup itemsPerRow={3} stackable>
           {projectsData.map((project) => (
             <StyledCard key={project.id} onClick={() => handleOpenModal(project)}>
-              <StyledImage src={project.images[0]} wrapped ui={false} style={{width: isMobile ? "100%" : '30vw'}}/>
+              <StyledImage src={project.images[0].src} wrapped ui={false} style={{width: isMobile ? "100%" : '30vw'}}/>
               <StyledCardContent>
                 <StyledCardHeader style={{color: "rgb(62, 163, 163)"}}>{project.title}</StyledCardHeader>
                 <StyledCardDescription style={{color: "rgb(62, 163, 163)"}}>{project.description}</StyledCardDescription>
@@ -181,14 +195,16 @@ const Projects = () => {
         <StyledModal open={true} onClose={handleCloseModal}>
           <Modal.Header style={{textAlign: 'center'}}>{selectedProject.title}</Modal.Header>
           <Modal.Content image scrolling>
-          <Image.Group>
-              <Slider {...settings}>
-              {selectedProject.images.map((image, index) => (
+          <Image.Group style={{display: 'flex', justifyContent: 'center' }}>
+          <Slider {...settings} style={{display: 'grid'}}>
+              {selectedProject.images.map((src, index) => (
+                
                 <div key={index}>
-                  <Image src={image} wrapped />
+                  <Image src={src} wrapped />
                 </div>
+                
               ))}
-            </Slider>
+              </Slider>
             </Image.Group>
 
             <Modal.Description>
