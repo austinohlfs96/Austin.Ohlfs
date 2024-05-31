@@ -28,6 +28,7 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      isDeployed: true,
       title: 'AESIR Speed Techs',
       description: 'Website and booking software for AESIR Speed Techs.',
       images: ['', '/AESIRServices.png', 'AESIRMobile.png'],
@@ -44,6 +45,7 @@ const Projects = () => {
     },
     {
       id: 2,
+      isDeployed: false,
       title: 'Pokemon Card Shop',
       description: 'Pokemon card e-commerce model.',
       images: [
@@ -59,6 +61,7 @@ const Projects = () => {
     },
     {
       id: 3,
+      isDeployed: false,
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
       images: [
@@ -75,6 +78,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'Date-smith',
+      isDeployed: false,
       description: 'Match making project.',
       images: [
         { src: 'DateSmith.png', description: 'Description for ABALight' },
@@ -90,6 +94,7 @@ const Projects = () => {
     {
       id: 5,
       title: 'AAA Madlibs',
+      isDeployed: false,
       description: 'Backend CLI Madlib Game.',
       images: [
         { src: 'Designer.png', description: 'Description for ABALight' },
@@ -230,9 +235,12 @@ const Projects = () => {
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button onClick={() => window.open(selectedProject.link, '_blank')} style={{ background: '#00e6e6', color: 'white' }}>
-              Visit Project <Icon name='external' />
-            </Button>
+          <Button 
+            onClick={() => window.open(selectedProject.link, '_blank')} 
+            style={{ background: '#00e6e6', color: 'white' }}
+          >
+            {selectedProject.isDeployed ? 'Visit Site' : 'Visit Repo'} <Icon name='external' />
+          </Button>
             <Button onClick={handleCloseModal}>Close</Button>
           </Modal.Actions>
         </StyledModal>
