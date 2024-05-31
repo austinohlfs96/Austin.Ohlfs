@@ -26,7 +26,7 @@ const Projects = () => {
       id: 1,
       title: 'AESIR Speed Techs',
       description: 'A brief description of project one.',
-      images: ['/AESIRSite.png', '/AESIRSite2.png'], // Add more image paths here
+      images: ['/AESIRSite2.png', '/AESIRServices.png'], // Add more image paths here
       link: 'https://capstone-deploy-14pb.onrender.com',
       technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
       features: 'Real-time updates, User Authentication, Responsive Design',

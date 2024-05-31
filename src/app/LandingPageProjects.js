@@ -21,7 +21,7 @@ const LandingPageProjects = () => {
       id: 1,
       title: 'AESIR Speed Techs',
       description: 'Website and booking software for AESIR Speed Techs.',
-      image: '/AESIRSite.png',
+      image: '/AESIRSite2.png',
       link: '/projects',
       technologies: ['React', 'Redux', 'Python', 'Postgresql', 'SemanticUI', 'Flask'],
     },
@@ -135,7 +135,8 @@ const LandingPageProjects = () => {
                   ))}
                 </StyledCardMeta>
                 <Button primary as='a' onClick={() => navigate(`/projects`)} style={{backgroundColor: '#4a90e2',
-                  color: '#fff', }}>
+                  color: '#fff',
+                  marginTop: '20px' }}>
                   View Project
                 </Button>
               </Card.Content>

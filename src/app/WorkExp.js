@@ -14,7 +14,7 @@ const WorkExp = () => {
           <JobExperience>
 
           <JobTitle>ÆSIR SPEED TECHS -Software Engineer/Wax Tech</JobTitle>
-<StyledImage src="/AESIRLogo.png" size="small" style={{background: 'white'}}/>
+<StyledImage src="/AESIRLogo2.png" size="small" style={{background: 'white'}}/>
 <StyledList>
   <li><strong>Overview:</strong> Served as the Lead Software Engineer and Wax Technician, responsible for building in-house software, booking systems, and designing the company website, while also maintaining professional athletes' equipment to the highest standards.</li>
   

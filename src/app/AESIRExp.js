@@ -189,15 +189,15 @@ const AesirExperience = () => {
           <h2 style={{ color: '#007bff' }}>Visual Showcase</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <figure style={{ margin: '0' }}>
-              <img src="/AESIRSite.png" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
+              <img src="/AESIRSite2.png" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
               <figcaption style={{ textAlign: 'center', fontSize: '0.9em', color: '#6c757d' }}>Screenshot of the Aesir website homepage.</figcaption>
             </figure>
             <figure style={{ margin: '0' }}>
-              <img src="https://via.placeholder.com/600x400.png?text=Booking+Software+Interface" alt="Booking Software Interface" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
+              <img src="/AESIRServices.png" alt="Booking Software Interface" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
               <figcaption style={{ textAlign: 'center', fontSize: '0.9em', color: '#6c757d' }}>Interface of the booking software.</figcaption>
             </figure>
             <figure style={{ margin: '0' }}>
-              <img src="https://via.placeholder.com/600x400.png?text=Ski+Tuning+Photo" alt="Ski Tuning in Action" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
+              <img src="/AESIRCREW.jpg" alt="Ski Tuning in Action" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
               <figcaption style={{ textAlign: 'center', fontSize: '0.9em', color: '#6c757d' }}>Photo of me tuning a snowboard.</figcaption>
             </figure>
           </div>
