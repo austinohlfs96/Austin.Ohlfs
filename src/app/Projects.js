@@ -65,7 +65,7 @@ const Projects = () => {
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
       images: [
-        { src: 'BackYardFantasyFootBall.png', description: 'Description for ABALight' },
+        { src: 'BacKYardFantasyFootBall.png', description: 'Description for ABALight' },
         { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
         { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
