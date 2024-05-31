@@ -321,12 +321,21 @@ footer p {
   50% { border-color: orange; }
 }
 
-.slick-track {
-  display: flex;
-  width: 5635px;
-  transform: translate3d(-805px, 0px, 0px);
-  flex-direction: row;
-  place-content: flex-start;
+.slick-list {
+  position: relative;
+  display: flex !important;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.slick-initialized .slick-slide {
+  display: flex !important;
+  align-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 
