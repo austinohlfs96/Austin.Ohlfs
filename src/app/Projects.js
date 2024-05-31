@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Card, Image, Modal, Button, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
-import StackIcon from "tech-stack-icons"; 
+import StackIcon from "tech-stack-icons";
+import MatrixRain from './MatrixRain';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-
+  const matrix = <MatrixRain/>
   const projectsData = [
     {
       id: 1,
@@ -20,17 +21,6 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'AAA Madlibs',
-      description: 'A brief description of project one.',
-      images: ['Designer.png', 'Designer2.png'], // Add more image paths here
-      link: 'https://github.com/anthonyBosek/madlibs',
-      technologies: ['Python', 'Mysql'],
-      features: 'Interactive story creation, Database integration',
-      challenges: 'Designing a user-friendly interface, Managing database connections',
-      learnings: 'Enhancing Python skills, Database design and management',
-    },
-    {
-      id: 3,
       title: 'Pokemon Card Shop',
       description: 'A brief description of project one.',
       images: ['ABACardShop.png', 'ABACardShop2.png'], // Add more image paths here
@@ -41,7 +31,7 @@ const Projects = () => {
       learnings: 'Client-side JavaScript, Bootstrap for styling',
     },
     {
-      id: 4,
+      id: 3,
       title: 'BackYard Fantasy Football',
       description: 'A brief description of project two.',
       images: ['/BacKYardFantasyFootBall.png', '/BacKYardFantasyFootBall2.png'], // Add more image paths here
@@ -52,7 +42,7 @@ const Projects = () => {
       learnings: 'React components and state management, CSS for responsive design',
     },
     {
-      id: 5,
+      id: 4,
       title: 'Date-smith',
       description: 'A brief description of project two.',
       images: ['DateSmith.png', 'DateSmith2.png'], // Add more image paths here
@@ -61,6 +51,17 @@ const Projects = () => {
       features: 'Matchmaking algorithm, Secure user authentication',
       challenges: 'Algorithm design, Data security',
       learnings: 'Combining React with Python backend, Enhancing security practices',
+    },
+    {
+      id: 5,
+      title: 'AAA Madlibs',
+      description: 'A brief description of project one.',
+      images: ['Designer.png', 'Designer2.png'], // Add more image paths here
+      link: 'https://github.com/anthonyBosek/madlibs',
+      technologies: ['Python', 'Mysql'],
+      features: 'Interactive story creation, Database integration',
+      challenges: 'Designing a user-friendly interface, Managing database connections',
+      learnings: 'Enhancing Python skills, Database design and management',
     },
     // Add more projects as needed
   ];
@@ -115,26 +116,31 @@ const Projects = () => {
   };
 
   return (
-    <StyledContainer>
-      <StyledSection id="projects">
-        <StyledHeader>My Projects</StyledHeader>
+    <StyledContainer id='projectContainer' >
+      <div className="matrix-rain-container">
+      <StyledMatrixRain />
+      </div>
+    
+      {/* <StyledSection id="projects"> */}
+        <StyledHeader style={{textAlign: 'center'}}>My Projects</StyledHeader>
         <StyledCardGroup itemsPerRow={3} stackable>
           {projectsData.map((project) => (
-            <StyledCard key={project.id}  onClick={() => handleOpenModal(project)}>
+            <StyledCard key={project.id} onClick={() => handleOpenModal(project)}>
               <StyledImage src={project.images[0]} wrapped ui={false} />
-              <Card.Content>
-                <StyledCardHeader id={project.id}>{project.title}</StyledCardHeader>
-                <StyledCardDescription>{project.description}</StyledCardDescription>
+              <StyledCardContent>
+                <StyledCardHeader style={{color: "rgb(62, 163, 163)"}}>{project.title}</StyledCardHeader>
+                <StyledCardDescription style={{color: "rgb(62, 163, 163)"}}>{project.description}</StyledCardDescription>
                 <StyledCardMeta>
                   {project.technologies.map((technology, index) => (
-                    <StackIcon key={index} name={getIconForTechnology(technology)} title={technology} />
+                    <StackIcon key={index} name={getIconForTechnology(technology)} title={technology} style={{width: '5vw', height: 'auto'}} />
                   ))}
                 </StyledCardMeta>
-              </Card.Content>
+              </StyledCardContent>
             </StyledCard>
           ))}
         </StyledCardGroup>
-      </StyledSection>
+        
+      {/* </StyledSection> */}
 
       {selectedProject && (
         <StyledModal open={true} onClose={handleCloseModal}>
@@ -175,9 +181,42 @@ const Projects = () => {
 };
 
 const StyledContainer = styled(Container)`
+  position: relative;
   padding: 40px;
+  background: linear-gradient(to bottom, #000000, #000000); /* Example gradient */
+  color: #ffffff;
+  min-height: 100vh;
+  z-index: 1;
+  margin-top: 60px;
+  
+
+  @media (max-width: 768px) { // Adjust the maximum width as needed
+    width: 100%; // Adjust the width for smaller screens
+    margin-left: 0px !important; // Adjust margin-left for smaller screens
+    margin-right: 0px !important; // Adjust margin-right for smaller screens
+  }
+
+
+  .matrix-rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    z-index: -2;
+    font-size: 0.8em; /* Adjust the font size as needed */
+  }
 `;
 
+const StyledMatrixRain = styled(MatrixRain)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 const StyledSection = styled.section`
   text-align: center;
 `;
@@ -185,78 +224,86 @@ const StyledSection = styled.section`
 const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #4a90e2; /* Blue color for header */
+  color: #00e6e6;
 `;
 
 const StyledCardGroup = styled(Card.Group)`
-  &&& {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
+&&& {
+  display: 'flex';
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 `;
 
 const StyledCard = styled(Card)`
-  &&& {
-    border: 1px solid #4a90e2; /* Blue border color */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(74, 144, 226, 0.2); /* Blue shadow */
-    transition: box-shadow 0.3s ease-in-out;
+&&& {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1000px !important;
+  background: linear-gradient(145deg, rgba(0, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
+  border: 1px solid rgb(62, 163, 163);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 230, 230, 0.1);
+  height: 100%; /* Ensure each card takes the full height of its grid cell */
 
-    &:hover {
-      box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4); /* Hover effect */
-    }
-    cursor: pointer;
+  &:hover {
+    box-shadow: 0 12px 24px rgba(0, 230, 230, 0.2);
+    transform: translateY(-5px);
   }
+  cursor: pointer;
+}
+`;
+
+const StyledCardContent = styled(Card.Content)`
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 100%; /* Ensure the content takes the full height of the card */
+`;
+
+const StyledCardHeader = styled(Card.Header)`
+flex: 1; /* Allow the header to grow to fill the available space */
+overflow: hidden;
+text-overflow: ellipsis; /* Truncate text if it overflows */
+white-space: nowrap; /* Prevent text from wrapping */
+color: rgb(62, 163, 163);
+`;
+
+const StyledCardDescription = styled(Card.Description)`
+flex: 1; /* Allow the description to grow to fill the available space */
+overflow: hidden;
+text-overflow: ellipsis; /* Truncate text if it overflows */
+color: rgb(62, 163, 163);
+`;
+
+const StyledCardMeta = styled(Card.Meta)`
+display: flex;
+justify-content: center;
+margin-top: 10px;
 `;
 
 const StyledImage = styled(Image)`
   border-radius: 10px 10px 0 0 !important;
-`;
-
-const StyledCardHeader = styled(Card.Header)`
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #333; /* Dark text color */
-`;
-
-const StyledCardDescription = styled(Card.Description)`
-  color: #666; /* Medium text color */
-  margin-bottom: 15px;
-`;
-
-const StyledCardMeta = styled(Card.Meta)`
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-`;
-
-const StyledIcon = styled(Icon)`
-  &&& {
-    display: flex;
-    flex-direction: row;
-    margin: 0 5px;
-    color: #4a90e2; /* Blue icon color */
-    font-size: 1.2em;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.2); /* Hover effect */
-    }
-  }
+  width: 20em;
+  height: auto;
+  
 `;
 
 const StyledModal = styled(Modal)`
   &&& {
     .header {
       font-size: 1.8em;
-      color: #4a90e2;
+      color: #00e6e6;
     }
     .content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: #212121;
+      color: #ffffff;
       img {
         border-radius: 10px;
         margin-bottom: 10px;
@@ -274,11 +321,11 @@ const StyledModalDescription = styled.div`
   margin-top: 20px;
   p {
     font-size: 1.1em;
-    color: #333;
+    color: #e0e0e0;
     line-height: 1.5;
     margin-bottom: 10px;
     strong {
-      color: #4a90e2;
+      color: #00e6e6;
     }
   }
 `;

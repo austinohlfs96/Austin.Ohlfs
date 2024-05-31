@@ -80,14 +80,14 @@ const MainSection = ({ isMobile }) => {
                 <section id="introduction">
                   <div className="container" style={styles.introContainer}>
                     <h2 style={styles.heading}>Introduction</h2>
-                    <p style={styles.paragraph}>Welcome to my digital universe! I'm Austin, a Colorado native passionate about coding and carving through fresh powder on the slopes.</p>
+                    <p style={styles.paragraph}>I'm Austin, a proud Colorado native with a deep passion for both coding and exploring the great outdoors. My journey into the world of software engineering has been driven by a love for solving complex problems and creating innovative solutions.  When I'm not immersed in code, you can find me exploring the rugged beauty of the Rockies, seeking adventure and inspiration in nature. Join me as I share my projects, insights, and experiences from the intersection of technology and the natural world.</p>
                   </div>
                 </section>
 
                 <section id="transition">
                   <div className="container" style={styles.subContainer}>
                     <h3 style={styles.subHeading}>From Mountains to Code</h3>
-                    <p style={styles.paragraph}>With over a decade of experience tuning skis and snowboards in Vail, I've mastered precision and attention to detail. Now, I bring that same dedication to my work as a full-stack software engineer.</p>
+                    <p style={styles.paragraph}>With over a decade of experience tuning skis and snowboards in Vail, Colorado, I've mastered precision and attention to detail. Now, I bring that same dedication and passion to my work as a full-stack software engineer.</p>
                   </div>
                 </section>
 
@@ -115,7 +115,7 @@ const MainSection = ({ isMobile }) => {
                 <section id="introduction">
                   <div className="container" style={styles.subContainer}>
                     <h3 style={styles.subHeading}>Let's Collaborate</h3>
-                    <p style={styles.paragraph}>Whether you're navigating the slopes or the web, let's innovate together. Let's harness technology to elevate your business.</p>
+                    <p style={styles.paragraph}>Whether you're navigating the slopes or the web, let's innovate together. Let's harness technology to elevate your business. I'd love to hear for you!</p>
                   </div>
                 </section>
 
@@ -189,6 +189,7 @@ const styles = {
     marginBottom: '10px',
   },
   paragraph: {
+    textAlign: 'center',
     fontSize: '1rem',
     lineHeight: '1.6',
     marginBottom: '15px',

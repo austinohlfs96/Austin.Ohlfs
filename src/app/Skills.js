@@ -64,10 +64,10 @@ const Skills = ({ isMobile }) => {
       }
     ]
   };
-
+const header = '<Tech Stack/>'
   return (
      <Container>
-      <Header>Tech Stack</Header>
+      <Header>{header}</Header>
       {/* <Grid>
         <Grid.Column width={isMobile ? 16 : 8}> */}
 

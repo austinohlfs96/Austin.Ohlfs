@@ -8,6 +8,7 @@ body {
   padding: 0;
 }
 
+
 h1, h2 {
   font-weight: normal;
   margin-bottom: 1rem;
@@ -213,6 +214,28 @@ footer p {
   padding: 40px 0;
 }
 
+#projectContainer {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(to bottom, #000000, #000000); /* Example gradient */
+  color: #ffffff;
+  min-height: 100vh;
+  z-index: 1;
+  margin-top: 60px;
+  width: auto !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+  @media only screen and (max-width: 767px) {
+    .ui.container {
+        width: auto !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+
 #projects h2 {
   font-family: 'Anta', sans-serif;
   color: white;
@@ -229,6 +252,15 @@ footer p {
 
 #projects .card:hover {
   transform: translateY(-10px);
+}
+
+.ui.card:after {
+  display: none;
+  content: ' ';
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .ui.modal {

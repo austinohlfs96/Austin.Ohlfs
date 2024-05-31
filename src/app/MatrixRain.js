@@ -6,13 +6,16 @@ const MatrixRain = () => {
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth * 2;
+    canvas.height = window.innerHeight * 5;
 
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>?/\;:!@#$%^&*(){}[]'.split('');
     const fontSize = 10;
     const columns = canvas.width / fontSize;
-    const drops = Array.from({ length: columns }, () => 1);
+    var drops = [];
+      for (var i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * canvas.height / 4); // Random starting position
+      }
 
     const draw = () => {
       // Semi-transparent background

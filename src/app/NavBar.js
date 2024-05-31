@@ -53,7 +53,7 @@ const NavBar = () => {
                 <Menu.Item className="menu-item" onClick={() => handleItemClick('/projects')}><Icon name="code" /> Projects</Menu.Item>
                 <Menu.Item className="menu-item" onClick={() => handleItemClick('/work-experience')}><Icon name="briefcase" /> Experience</Menu.Item>
                 <Menu.Item className="menu-item" onClick={() => handleItemClick('/blog')}><Icon name="newspaper" /> Blog</Menu.Item>
-                <Menu.Item className="menu-item" onClick={() => handleItemClick('/aesir')}><Icon name="globe" /> Aesir</Menu.Item>
+                <Menu.Item className="menu-item" onClick={() => handleItemClick('/aesir')}><Icon name="globe" /> ÆSIR</Menu.Item>
                 <Menu.Item className="menu-item" onClick={() => handleItemClick('/contact')}><Icon name="mail" /> Contact</Menu.Item>
               </Menu>
             </div>
@@ -68,7 +68,7 @@ const NavBar = () => {
             <Menu.Item as={Link} to="/projects" onClick={() => handleItemClick('/projects')} style={{padding: '0px'}}><Icon name="code" /> Projects</Menu.Item>
             <Menu.Item as={Link} to="/work-experience" onClick={() => handleItemClick('/work-experience')} style={{padding: '0px'}}><Icon name="briefcase" /> Experience</Menu.Item>
             <Menu.Item as={Link} to="/blog" onClick={() => handleItemClick('/blog')} style={{padding: '0px'}}><Icon name="newspaper" /> Blog</Menu.Item>
-            <Menu.Item as={Link} to="/aesir" onClick={() => handleItemClick('/aesir')} style={{padding: '0px'}}><Icon name="globe" /> Aesir</Menu.Item>
+            <Menu.Item as={Link} to="/aesir" onClick={() => handleItemClick('/aesir')} style={{padding: '0px'}}><Icon name="globe" /> ÆSIR</Menu.Item>
             <Menu.Item as={Link} to="/contact" onClick={() => handleItemClick('/contact')} style={{padding: '0px'}} ><Icon name="mail" /> Contact</Menu.Item>
           </Menu.Menu>
         </Menu>
