@@ -114,11 +114,15 @@ const AesirExperience = () => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#f9f9f9', color: '#333', minHeight: '100vh', padding: '20px', marginTop: '60px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', backgroundColor: '#fff', borderRadius: '10px', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '40px', borderBottom: '2px solid #007bff', paddingBottom: '10px', color: '#007bff' }}>Aesir Experience: Combining Passions</h1>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <img src='/AESIRLogo.png' style={{width: '50vw', height: 'auto'}}/>
+        </div>
+        
+        <h1 style={{ textAlign: 'center', marginBottom: '40px', borderBottom: '2px solid #007bff', paddingBottom: '10px', color: '#007bff' }}>Combining Passions</h1>
         
         <section style={{ marginBottom: '40px' }}>
         <figure style={{ margin: '0' }}>
-              <img src="https://via.placeholder.com/600x400.png?text=Website+Screenshot" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
+              <img src="/AustinRoto.jpg" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
               <figcaption style={{ textAlign: 'center', fontSize: '0.9em', color: '#6c757d' }}></figcaption>
             </figure>
           <h2 style={{ color: '#007bff', textAlign: 'center' }}>Introduction</h2>
@@ -185,7 +189,7 @@ const AesirExperience = () => {
           <h2 style={{ color: '#007bff' }}>Visual Showcase</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <figure style={{ margin: '0' }}>
-              <img src="https://via.placeholder.com/600x400.png?text=Website+Screenshot" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
+              <img src="/AESIRSite.png" alt="Aesir Website Screenshot" style={{ width: '100%', border: '1px solid #ccc', padding: '10px' }} />
               <figcaption style={{ textAlign: 'center', fontSize: '0.9em', color: '#6c757d' }}>Screenshot of the Aesir website homepage.</figcaption>
             </figure>
             <figure style={{ margin: '0' }}>
