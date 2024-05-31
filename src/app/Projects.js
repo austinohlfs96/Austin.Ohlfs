@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Card, Image, Modal, Button, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import StackIcon from "tech-stack-icons";
@@ -6,7 +6,21 @@ import MatrixRain from './MatrixRain';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const matrix = <MatrixRain/>
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const projectsData = [
     {
       id: 1,
@@ -126,7 +140,7 @@ const Projects = () => {
         <StyledCardGroup itemsPerRow={3} stackable>
           {projectsData.map((project) => (
             <StyledCard key={project.id} onClick={() => handleOpenModal(project)}>
-              <StyledImage src={project.images[0]} wrapped ui={false} />
+              <StyledImage src={project.images[0]} wrapped ui={false} style={{width: isMobile ? "100%" : '30vw'}}/>
               <StyledCardContent>
                 <StyledCardHeader style={{color: "rgb(62, 163, 163)"}}>{project.title}</StyledCardHeader>
                 <StyledCardDescription style={{color: "rgb(62, 163, 163)"}}>{project.description}</StyledCardDescription>
@@ -237,25 +251,28 @@ const StyledCardGroup = styled(Card.Group)`
 `;
 
 const StyledCard = styled(Card)`
-&&& {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 1000px !important;
-  background: linear-gradient(145deg, rgba(0, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
-  border: 1px solid rgb(62, 163, 163);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 230, 230, 0.1);
-  height: 100%; /* Ensure each card takes the full height of its grid cell */
+  &&& {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px !important;
+    background: linear-gradient(145deg, rgba(0, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
+    border: 1px solid rgb(62, 163, 163);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 230, 230, 0.1);
+    height: 100%; /* Ensure each card takes the full height of its grid cell */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Add transition for smooth effect */
 
-  &:hover {
-    box-shadow: 0 12px 24px rgba(0, 230, 230, 0.2);
-    transform: translateY(-5px);
+    &:hover {
+      background: linear-gradient(145deg, rgba(0, 0, 255, 0.7), rgba(0, 255, 255, 0.5)) !important;
+      box-shadow: 0 12px 24px rgba(0, 230, 230, 0.2);
+      transform: scale(1.05); /* Slightly enlarge the card */
+    }
+    cursor: pointer;
   }
-  cursor: pointer;
-}
 `;
+
 
 const StyledCardContent = styled(Card.Content)`
 display: flex;
@@ -287,7 +304,7 @@ margin-top: 10px;
 
 const StyledImage = styled(Image)`
   border-radius: 10px 10px 0 0 !important;
-  width: 20em;
+  width:  20em;
   height: auto;
   
 `;
@@ -297,6 +314,7 @@ const StyledModal = styled(Modal)`
     .header {
       font-size: 1.8em;
       color: #00e6e6;
+      background: #212121;
     }
     .content {
       display: flex;
@@ -312,6 +330,7 @@ const StyledModal = styled(Modal)`
     .actions {
       display: flex;
       justify-content: space-between;
+      background: #212121;
     }
   }
 `;
