@@ -16,10 +16,11 @@ const AesirExperience = () => {
         <section id="introduction" style={styles.section}>
           <figure style={styles.figure}>
             <img src="/AustinRoto.jpg" alt="Aesir Website Screenshot" style={styles.image} />
+            <figcaption style={styles.caption}>Tuning a snowboard.</figcaption>
           </figure>
           <h2 style={styles.subheading}>Introduction</h2>
           <p style={styles.paragraph}>
-            <strong>Aesir</strong> is a specialized company dedicated to ski and snowboard tuning. As an avid skier and software engineer, I had the unique opportunity to merge my love for winter sports with my technical skills. At Aesir, I took on the dual roles of <strong>Head Tuner</strong> and <strong>Lead Software Engineer</strong>.
+            <strong>AESIR</strong> is a specialized company dedicated to ski and snowboard tuning. As an avid skier and software engineer, I had the unique opportunity to merge my love for winter sports with my technical skills. At Aesir, I took on the dual roles of <strong>Head Tuner</strong> and <strong>Lead Software Engineer</strong>.
           </p>
         </section>
        
@@ -97,7 +98,7 @@ const AesirExperience = () => {
             </figure>
             <figure style={styles.figure}>
               <img src="/AESIRCREW.jpg" alt="Ski Tuning in Action" style={styles.image} />
-              <figcaption style={styles.caption}>Tuning a snowboard.</figcaption>
+              <figcaption style={styles.caption}>AESIR crew</figcaption>
             </figure>
           </div>
   

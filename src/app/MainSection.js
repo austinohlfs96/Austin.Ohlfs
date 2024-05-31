@@ -205,6 +205,7 @@ const styles = {
   skillsContainer: {
     textAlign: 'center',
     marginTop: '20px',
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.6)',
   },
   contactSection: {
     marginTop: '40px',
