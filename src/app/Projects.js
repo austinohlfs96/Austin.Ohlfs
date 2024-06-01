@@ -31,7 +31,6 @@ const Projects = () => {
       isDeployed: true,
       title: 'AESIR Speed Techs',
       description: 'Website and booking software for AESIR Speed Techs.',
-      images: ['', '/AESIRServices.png', 'AESIRMobile.png'],
       images: [
         { src: '/AESIRSite2.png', description: 'Description for ABALight' },
         { src: '/AESIRServices.png', description: 'Description for ABACardShop' },
@@ -66,8 +65,6 @@ const Projects = () => {
       description: 'Backyard fantasy fotball game.',
       images: [
         { src: 'BacKYardFantasyFootBall.png', description: 'Description for ABALight' },
-        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
-        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
       link: 'https://github.com/isaacsong1/Backyard-Fantasy-Football',
       technologies: ['React', 'CSS', 'JSON'],
@@ -82,8 +79,6 @@ const Projects = () => {
       description: 'Match making project.',
       images: [
         { src: 'DateSmith.png', description: 'Description for ABALight' },
-        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
-        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
       link: 'https://github.com/isaacwilhite/table-3-phase-4-project',
       technologies: ['React', 'Python', 'Mysql', 'CSS'],
@@ -98,8 +93,6 @@ const Projects = () => {
       description: 'Backend CLI Madlib Game.',
       images: [
         { src: 'Designer.png', description: 'Description for ABALight' },
-        { src: 'ABACardShop.png', description: 'Description for ABACardShop' },
-        { src: 'PokemonCart.png', description: 'Description for PokemonCart' },
       ], // Add more image paths here
       link: 'https://github.com/anthonyBosek/madlibs',
       technologies: ['Python', 'Mysql'],
