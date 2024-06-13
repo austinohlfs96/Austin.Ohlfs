@@ -45,6 +45,9 @@ const LandingPage = () => {
   <p style={{ fontSize: isMobile ? '2vw' : '1.5vw', width: '50%', marginTop: isMobile ? '20px' : '60px', marginBottom: isMobile ? '20px' : '60px' }}>
     I'm Austin, a Software Engineer with expertise in front-end and back-end development, I specialize in technologies such as JavaScript, React, Python, and many others. Explore my qualifications, skills, and portfolio to learn more about what I can offer!
   </p>
+  <p style={{ fontSize: isMobile ? '1.4vw' : '1.75vw', width: '50%', marginTop: isMobile ? '20px' : '60px', marginBottom: isMobile ? '20px' : '60px' }}>
+    If you don't do it this year, you'll just be another year olderr when you do. -<span>Warren Miller</span>
+  </p>
 </div>
 
       </div>
