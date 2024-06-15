@@ -24,6 +24,16 @@ const LandingPage = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  const styles = {
+    fontSize: isMobile ? '1.4vw' : '1.5vw',
+    width: '50%',
+    marginTop: isMobile ? '50px' : '150px',
+    marginBottom: isMobile ? '20px' : '60px',
+    fontStyle: 'italic',
+    fontFamily: 'sans-serif',
+    animation: 'fadeInFromLeft 2s ease-in-out'
+  };
 
   return (
     <div className="landing-page" style={{marginTop: '67px'}}>
@@ -41,12 +51,12 @@ const LandingPage = () => {
         <div className="text-content" style={{ zIndex: -3, padding: isMobile ? '20px' : '50px', textAlign: 'center', color: 'white', backgroundImage: "url(/AustinCoverPhoto.jpeg)", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', opacity: '0.7' }}>
   {/* Text Content */}
   {/* <h1 style={{ fontSize: isMobile ? '5vw' : '7vw', marginBottom: '20px' }}>Austin Ohlfs</h1> */}
-  <h5 style={{ fontSize: isMobile ? '4vw' : '3vw', marginBottom: isMobile ? '20px' : '60px', width: '50%', textAlign: 'center', marginTop: isMobile ? '20px' : '60px' }}>Full-Stack Software Engineer</h5>
-  <p style={{ fontSize: isMobile ? '2vw' : '1.5vw', width: '50%', marginTop: isMobile ? '20px' : '60px', marginBottom: isMobile ? '20px' : '60px' }}>
+  <h5 style={{ fontSize: isMobile ? '4.25vw' : '3.25vw', marginBottom: isMobile ? '20px' : '60px', width: '50%', textAlign: 'center', marginTop: isMobile ? '10px' : '30px' }}>Full-Stack Software Engineer</h5>
+  <p style={{ fontSize: isMobile ? '2vw' : '1.75vw', width: '50%', marginTop: isMobile ? '30px' : '90px', marginBottom: isMobile ? '20px' : '60px' }}>
     I'm Austin, a Software Engineer with expertise in front-end and back-end development, I specialize in technologies such as JavaScript, React, Python, and many others. Explore my qualifications, skills, and portfolio to learn more about what I can offer!
   </p>
-  <p style={{ fontSize: isMobile ? '1.4vw' : '1.75vw', width: '50%', marginTop: isMobile ? '20px' : '60px', marginBottom: isMobile ? '20px' : '60px' }}>
-    If you don't do it this year, you'll just be another year olderr when you do. -<span>Warren Miller</span>
+  <p style={{ fontSize: isMobile ? '1.4vw' : '1.5vw', width: '50%', marginTop: isMobile ? '50px' : '150px', marginBottom: isMobile ? '20px' : '60px', fontStyle: 'italic', fontFamily: 'serif'}} className="fadeInLeftToRight">
+    If you don't do it this year, you'll just be another year older when you do. <span style={{fontWeight: 'bold'}}> -Warren Miller</span>
   </p>
 </div>
 
