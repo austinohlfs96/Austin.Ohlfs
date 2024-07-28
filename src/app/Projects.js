@@ -44,6 +44,21 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: 'Spot Ai',
+      isDeployed: false,
+      description: 'Friendly Ai travel assistant chatbot.',
+      images: [
+        { src: 'SpotHome.png', description: 'Description for ABALight' },
+        { src: 'SpotMobile.png', description: 'Description for ABALight'},
+      ], // Add more image paths here
+      link: 'https://spot-jo7o.onrender.com',
+      technologies: ['Python', 'React', "Sass", 'Openai'],
+      features: 'Interactive story creation, Database integration',
+      challenges: 'Designing a user-friendly interface, Managing database connections',
+      learnings: 'Enhancing Python skills, Database design and management',
+    },
+    {
+      id: 3,
       isDeployed: false,
       title: 'Pokemon Card Shop',
       description: 'Pokemon card e-commerce model.',
@@ -59,7 +74,7 @@ const Projects = () => {
       learnings: 'Client-side JavaScript, Bootstrap for styling',
     },
     {
-      id: 3,
+      id: 4,
       isDeployed: false,
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
@@ -73,7 +88,7 @@ const Projects = () => {
       learnings: 'React components and state management, CSS for responsive design',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Date-smith',
       isDeployed: false,
       description: 'Match making project.',
@@ -87,7 +102,7 @@ const Projects = () => {
       learnings: 'Combining React with Python backend, Enhancing security practices',
     },
     {
-      id: 5,
+      id: 6,
       title: 'AAA Madlibs',
       isDeployed: false,
       description: 'Backend CLI Madlib Game.',
@@ -101,10 +116,13 @@ const Projects = () => {
       learnings: 'Enhancing Python skills, Database design and management',
     },
     // Add more projects as needed
+    
   ];
 
   const getIconForTechnology = (technology) => {
     switch (technology.toLowerCase()) {
+      case 'scss':
+        return 'scss';
       case 'react':
         return 'reactjs';
       case 'node.js':
@@ -139,6 +157,10 @@ const Projects = () => {
         return 'semanticui';
       case 'json':
         return 'json';
+        case 'openai':
+          return 'openai';
+        case 'sass':
+          return 'sass';
       default:
         return 'code';
     }
@@ -287,6 +309,7 @@ const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
   color: #00e6e6;
+  
  
 
   @keyframes fadeIn {
@@ -346,6 +369,7 @@ height: 100%; /* Ensure the content takes the full height of the card */
 const StyledCardHeader = styled(Card.Header)`
 flex: 1; /* Allow the header to grow to fill the available space */
 overflow: hidden;
+text-decoration: underline;
 text-overflow: ellipsis; /* Truncate text if it overflows */
 white-space: nowrap; /* Prevent text from wrapping */
 color: rgb(62, 163, 163);
@@ -355,6 +379,7 @@ const StyledCardDescription = styled(Card.Description)`
 flex: 1; /* Allow the description to grow to fill the available space */
 overflow: hidden;
 text-overflow: ellipsis; /* Truncate text if it overflows */
+text-align: center;
 color: rgb(62, 163, 163);
 `;
 

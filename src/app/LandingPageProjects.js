@@ -27,11 +27,11 @@ const LandingPageProjects = () => {
     },
     {
       id: 2,
-      title: 'AAA Madlibs',
-      description: 'Backend CLI Madlib Game.',
-      image: 'Designer.png',
+      title: 'Spot Ai',
+      description: 'Friendly Ai travel assistant chatbot.',
+      image: 'SpotHome.png',
       link: '/projects',
-      technologies: ['Python', 'Mysql'],
+      technologies: ['Python', 'React', 'Openai', "sass"],
     },
     {
       id: 3,
@@ -48,6 +48,14 @@ const LandingPageProjects = () => {
       image: '/BacKYardFantasyFootBall.png',
       link: 'https://github.com/yourusername/project-two',
       technologies: ['React', 'CSS', 'JSON'],
+    },
+    {
+      id: 5,
+      title: 'AAA Madlibs',
+      description: 'Backend CLI Madlib Game.',
+      image: 'Designer.png',
+      link: '/projects',
+      technologies: ['Python', 'Mysql'],
     },
     // {
     //   id: 5,
@@ -96,6 +104,10 @@ const LandingPageProjects = () => {
         return 'semanticui';
         case 'json':
         return 'json';
+        case 'openai':
+          return 'openai';
+        case 'sass':
+          return 'sass';
       default:
         return 'code';
     }
