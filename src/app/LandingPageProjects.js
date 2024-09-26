@@ -174,7 +174,7 @@ const StyledSection = styled.section`
 const StyledHeader = styled.h2`
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #4a90e2; /* Blue color for header */
+  color: rgb(0, 216, 255); /* Blue color for header */
  
 `;
 

@@ -8,6 +8,9 @@ import Skills from './Skills'; // Adjust the import according to your project st
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
 import LandingPageProjects from './LandingPageProjects';
+import Collaboration from './Collaboration';
+import SchedulingSection from './SchedulingSection';
+import Specialization from './Specilazation';
 
 
 const MainSection = ({ isMobile }) => {
@@ -80,21 +83,13 @@ const MainSection = ({ isMobile }) => {
                 <section id="introduction">
                   <div className="container" style={styles.introContainer}>
                     <h2 style={styles.heading}>Introduction</h2>
-                    <p style={styles.paragraph}>I'm Austin, a proud Colorado native with a deep passion for both coding and exploring the great outdoors. My journey into the world of software engineering has been driven by a love for solving complex problems and creating innovative solutions.  When I'm not immersed in code, you can find me exploring the rugged beauty of the Rockies, seeking adventure and inspiration in nature. Join me as I share my projects, insights, and experiences from the intersection of technology and the natural world.</p>
-                  </div>
-                </section>
-
-                <section id="transition">
-                  <div className="container" style={styles.subContainer}>
-                    <h3 style={styles.subHeading}>From Mountains to Code</h3>
-                    <p style={styles.paragraph}>With over a decade of experience tuning skis and snowboards in Vail, Colorado, I've mastered precision and attention to detail. Now, I bring that same dedication and passion to my work as a full-stack software engineer.</p>
+                    <p style={styles.paragraph}>Hi, I'm Austin, a Software Engineer and AI enthusiast based in Colorado. With a deep passion for coding and a love for the outdoors, I specialize in blending creativity with technology to build robust, scalable solutions. Whether it's developing user-friendly web interfaces or solving complex backend challenges, I bring a fresh perspective to software development.</p>
+                    <p style={styles.paragraph}>Outside of work, you'll often find me adventuring through the Rockies, where I draw inspiration from the natural world to fuel my coding endeavors.</p>
                   </div>
                 </section>
 
                 <section id="specialization">
                   <div className="container" style={styles.subContainer}>
-                    <h3 style={styles.subHeading}>Specialization</h3>
-                    <p style={styles.paragraph}>I specialize in crafting dynamic webpages and software solutions, leveraging technology to drive business growth and efficiency.</p>
                     {!isMobile && (
                   <div style={styles.skillsContainer}>
                     <Skills isMobile={false} />
@@ -109,14 +104,41 @@ const MainSection = ({ isMobile }) => {
                   
                 </section>
 
+                <section id="transition">
+                  {/* <div className="container" style={styles.subContainer}>
+                    <h3 style={styles.subHeading}>Specialization</h3>
+                    <p style={styles.paragraph}>I specialize in full-stack web development and consulting for businesses looking to expand their online presence or streamline their operations. My services focus on:</p>
+                    <ul style={styles.list}>
+                      <li style={styles.listItem}>
+                        <span style={styles.listItemIcon}>▶︎</span> 
+                        <strong>Web Design & Development</strong>: Crafting dynamic, responsive websites and applications that elevate user experience.
+                      </li>
+                      <li style={styles.listItem}>
+                        <span style={styles.listItemIcon}>▶︎</span> 
+                        <strong>Consulting Services</strong>: Helping businesses optimize technology for growth and efficiency.
+                      </li>
+                      <li style={styles.listItem}>
+                        <span style={styles.listItemIcon}>▶︎</span> 
+                        <strong>AI Integration</strong>: Building and experimenting with AI tools to drive innovation in both consumer-facing and business applications.
+                      </li>
+                    </ul>
+
+
+                  </div> */}
+                  <Specialization/>
+                </section>
+
+               
+
                
                 <LandingPageProjects/>
 
                 <section id="introduction">
-                  <div className="container" style={styles.subContainer}>
+                  {/* <div className="container" style={styles.subContainer}>
                     <h3 style={styles.subHeading}>Let's Collaborate</h3>
                     <p style={styles.paragraph}>Whether you're navigating the slopes or the web, let's innovate together. Let's harness technology to elevate your business. I'd love to hear for you!</p>
-                  </div>
+                  </div> */}
+                  <Collaboration/>
                 </section>
 
                 
@@ -124,7 +146,7 @@ const MainSection = ({ isMobile }) => {
             </section>
           </div>
       <section id="contact" style={styles.contactSection}>
-        <div className="container" style={styles.contactContainer}>
+        {/* <div className="container" style={styles.contactContainer}>
           <h2 style={styles.heading}>Contact Me</h2>
           <p style={styles.paragraph}>Have questions or opportunities? Reach out:</p>
           <ul style={styles.contactList}>
@@ -136,7 +158,8 @@ const MainSection = ({ isMobile }) => {
               <Icon name='linkedin' size='large' style={styles.icon} link onClick={() => window.open('https://www.linkedin.com/in/austinohlfs', '_blank')} />
             </li>
           </ul>
-        </div>
+        </div> */}
+        <SchedulingSection/>
       </section>
     </main>
   );
@@ -236,6 +259,28 @@ const styles = {
   icon: {
     color: '#00d8ff',
     cursor: 'pointer',
+  },
+  list: {
+    listStyle: 'none', // Remove default bullets
+    paddingLeft: '0',  // No left padding
+    marginTop: '20px', // Add top margin
+    color: '#bdbdbd',  // Soft gray text for list items
+  },
+  listItem: {
+    marginBottom: '15px', // Space between each item
+    fontSize: '1.2rem', // Slightly larger font
+    lineHeight: '1.6',  // Increase line height for readability
+    display: 'flex',    // Align icon and text horizontally
+    alignItems: 'center',
+    paddingLeft: '20px',
+    position: 'relative',
+  },
+  listItemIcon: {
+    // color: '#00e676', // Neon green for icon
+    marginRight: '10px',
+    fontSize: '1.4rem', // Larger icon size
+    position: 'absolute',
+    left: '0', // Align icon on the left edge
   },
 };
 
