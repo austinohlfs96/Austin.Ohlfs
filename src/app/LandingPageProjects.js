@@ -27,6 +27,22 @@ const LandingPageProjects = () => {
     },
     {
       id: 2,
+      title: 'Stovetop Gemini',
+      description: 'Website for Denver Rock Band Stovetop Gemini.',
+      image: 'STGHome.png',
+      link: '/projects',
+      technologies: ['Python', 'React', 'Flask', 'Postgresql'],
+    },
+    {
+      id: 3,
+      title: 'Divided by Desert',
+      description: 'Website for Denver Rock Band Divided by Desert.',
+      image: 'DbyDhome.png',
+      link: '/projects',
+      technologies: ['React', 'CSS'],
+    },
+    {
+      id: 4,
       title: 'Spot Ai',
       description: 'Friendly Ai travel assistant chatbot.',
       image: 'SpotHome.png',

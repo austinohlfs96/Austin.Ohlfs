@@ -30,7 +30,7 @@ const Projects = () => {
       id: 1,
       isDeployed: true,
       title: 'AESIR Speed Techs',
-      description: 'Website and booking software for AESIR Speed Techs.',
+      description: 'Created a fully functional website and booking system for AESIR Speed Techs, a service-based business that specializes in high-performance ski and snowboard tuning. The platform allows customers to easily schedule services, view service packages, and manage their appointments. The project combines modern web technologies with a user-friendly interface to streamline booking and service management.',
       images: [
         { src: '/AESIRSite2.png', description: 'Description for ABALight' },
         { src: '/AESIRServices.png', description: 'Description for ABACardShop' },
@@ -42,11 +42,42 @@ const Projects = () => {
       challenges: 'Implementing real-time features, Ensuring cross-browser compatibility',
       learnings: 'Advanced state management with Redux, Working with Flask for backend development',
     },
+    
+      {
+        id: 2,
+        isDeployed: true,
+        title: 'Stovetop Gemini Website',
+        description: 'Built a dynamic and responsive website for the local Denver rock band, Stovetop Gemini. The site includes an integrated music player, band information, event scheduling, and social media links, offering a central hub for fans to engage with the band’s content.',
+        images: [
+          { src: '/STGHome.png', description: 'Home page of the Stovetop Gemini website' },
+          { src: '/AboutSTG.png', description: 'Mobile view of the band’s site' },
+          { src: 'STGmobile.png', description: 'About section showcasing the band members' },
+        ],
+        link: 'https://capstone-deploy-14pb.onrender.com', // Deployed link
+        technologies: ['React', 'Python', 'PostgreSQL', 'CSS'],
+        features: 'Integrated Spotify and Instagram feeds, Custom video carousel for music videos, Mobile-first design',
+        challenges: 'Implementing real-time updates for event scheduling and ensuring cross-browser compatibility for multimedia elements',
+        learnings: 'Mastered advanced state management using Redux, Enhanced knowledge of backend development with Flask, Improved mobile responsiveness and cross-browser testing',
+      },
     {
-      id: 2,
+      id: 3,
+      isDeployed: true,
+      title: 'Divided By Desert Website',
+      description: 'Developed a sleek and responsive website for the Denver-based rock band, Divided by Desert. The site provides fans with band information, integrated music players, and social media connections. Visitors can stay updated with event schedules and enjoy multimedia content, including music videos and live performances.',
+      images: [
+        { src: 'DbyDhome.png', description: 'Home page of the Stovetop Gemini website' },
+      ],
+      link: 'https://capstone-deploy-14pb.onrender.com', // Deployed link
+      technologies: ['React', 'CSS'],
+      features: 'Integrated Spotify and Instagram feeds, Custom video carousel for music videos, Mobile-first design',
+      challenges: 'Implementing real-time updates for event scheduling and ensuring cross-browser compatibility for multimedia elements',
+      learnings: 'Mastered advanced state management using Redux, Enhanced knowledge of backend development with Flask, Improved mobile responsiveness and cross-browser testing',
+    },
+    {
+      id: 4,
       title: 'Spot Ai',
       isDeployed: false,
-      description: 'Friendly Ai travel assistant chatbot.',
+      description: `Developed an AI-powered travel assistant chatbot, designed to provide personalized travel suggestions and itineraries for users. The chatbot interacts in real-time, utilizing OpenAI's natural language processing capabilities, making it an intelligent and user-friendly tool for travelers looking for tailored recommendations.`,
       images: [
         { src: 'SpotHome.png', description: 'Description for ABALight' },
         { src: 'SpotMobile.png', description: 'Description for ABALight'},
@@ -58,9 +89,9 @@ const Projects = () => {
       learnings: 'Enhancing Python skills, Database design and management',
     },
     {
-      id: 3,
+      id: 4,
       isDeployed: false,
-      title: 'Pokemon Card Shop',
+      title: 'A fully functional e-commerce model for Pokémon card enthusiasts. The site features dynamic content loading for card listings, a shopping cart system, and user-friendly navigation to allow customers to browse and purchase Pokémon cards seamlessly.',
       description: 'Pokemon card e-commerce model.',
       images: [
         { src: 'ABALight.png', description: 'Description for ABALight' },
@@ -74,7 +105,7 @@ const Projects = () => {
       learnings: 'Client-side JavaScript, Bootstrap for styling',
     },
     {
-      id: 4,
+      id: 5,
       isDeployed: false,
       title: 'BackYard Fantasy Football',
       description: 'Backyard fantasy fotball game.',
@@ -87,25 +118,25 @@ const Projects = () => {
       challenges: 'Data synchronization, User interface design',
       learnings: 'React components and state management, CSS for responsive design',
     },
+    // {
+    //   id: 7,
+    //   title: 'Date-smith',
+    //   isDeployed: false,
+    //   description: 'Match making project.',
+    //   images: [
+    //     { src: 'DateSmith.png', description: 'Description for ABALight' },
+    //   ], // Add more image paths here
+    //   link: 'https://github.com/isaacwilhite/table-3-phase-4-project',
+    //   technologies: ['React', 'Python', 'Mysql', 'CSS'],
+    //   features: 'Matchmaking algorithm, Secure user authentication',
+    //   challenges: 'Algorithm design, Data security',
+    //   learnings: 'Combining React with Python backend, Enhancing security practices',
+    // },
     {
-      id: 5,
-      title: 'Date-smith',
-      isDeployed: false,
-      description: 'Match making project.',
-      images: [
-        { src: 'DateSmith.png', description: 'Description for ABALight' },
-      ], // Add more image paths here
-      link: 'https://github.com/isaacwilhite/table-3-phase-4-project',
-      technologies: ['React', 'Python', 'Mysql', 'CSS'],
-      features: 'Matchmaking algorithm, Secure user authentication',
-      challenges: 'Algorithm design, Data security',
-      learnings: 'Combining React with Python backend, Enhancing security practices',
-    },
-    {
-      id: 6,
+      id: 8,
       title: 'AAA Madlibs',
       isDeployed: false,
-      description: 'Backend CLI Madlib Game.',
+      description: 'A command-line based Madlibs game that offers a fun, interactive experience for users by generating custom stories based on user input. This game leverages a Python backend and a MySQL database to manage story templates and ensure a smooth gameplay experience.',
       images: [
         { src: 'Designer.png', description: 'Description for ABALight' },
       ], // Add more image paths here
