@@ -53,7 +53,7 @@ const Projects = () => {
           { src: '/AboutSTG.png', description: 'Mobile view of the band’s site' },
           { src: 'STGmobile.png', description: 'About section showcasing the band members' },
         ],
-        link: 'https://capstone-deploy-14pb.onrender.com', // Deployed link
+        link: 'https://stovetopgemini.onrender.com/', // Deployed link
         technologies: ['React', 'Python', 'PostgreSQL', 'CSS'],
         features: 'Integrated Spotify and Instagram feeds, Custom video carousel for music videos, Mobile-first design',
         challenges: 'Implementing real-time updates for event scheduling and ensuring cross-browser compatibility for multimedia elements',
@@ -67,7 +67,7 @@ const Projects = () => {
       images: [
         { src: 'DbyDhome.png', description: 'Home page of the Stovetop Gemini website' },
       ],
-      link: 'https://capstone-deploy-14pb.onrender.com', // Deployed link
+      link: 'https://bydesert.onrender.com/', // Deployed link
       technologies: ['React', 'CSS'],
       features: 'Integrated Spotify and Instagram feeds, Custom video carousel for music videos, Mobile-first design',
       challenges: 'Implementing real-time updates for event scheduling and ensuring cross-browser compatibility for multimedia elements',
