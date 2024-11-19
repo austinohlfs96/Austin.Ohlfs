@@ -133,7 +133,7 @@ const LandingPageProjects = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -205,21 +205,69 @@ const StyledCardGroup = styled(Card.Group)`
 
 const StyledCard = styled(Card)`
   &&& {
+    width: 100%; /* Ensures all cards scale uniformly */
+    max-width: 300px; /* Controls maximum card size */
+    height: 400px; /* Fix card height for uniformity */
     border: 1px solid #4a90e2; /* Blue border color */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(74, 144, 226, 0.2); /* Blue shadow */
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Spread content evenly */
+    padding: 15px; /* Add space inside the card */
 
     &:hover {
       box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4); /* Hover effect */
+      transform: translateY(-5px); /* Subtle hover animation */
+    }
+
+    .card-header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 15px;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Limit to 3 lines */
+      -webkit-box-orient: vertical;
+    }
+
+    .technologies {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 `;
 
-const StyledImage = styled(Image)`
-  border-radius: 10px 10px 0 0 !important;
+
+
+const StyledImage = styled.img`
+  width: 100%; /* Ensure the image fills the card width */
+  max-height: 150px; /* Set a fixed maximum height */
+  object-fit: cover; /* Maintain aspect ratio while cropping excess */
+  border-top-left-radius: 10px; /* Match card border radius */
+  border-top-right-radius: 10px; /* Match card border radius */
 `;
+
 
 const StyledCardHeader = styled(Card.Header)`
   font-size: 1.5em;

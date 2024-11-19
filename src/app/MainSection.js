@@ -169,7 +169,7 @@ const styles = {
   main: {
     margin: '0 auto',
     maxWidth: '1200px',
-    padding: '20px',
+    padding: '10px',
     fontFamily: 'Arial, sans-serif',
     color: '#333',
     background: '#f9f9f9',
