@@ -51,6 +51,7 @@ const projectsData = [
     features: 'Real-time updates, User Authentication, Responsive Design',
     challenges: 'Implementing real-time features, Ensuring cross-browser compatibility',
     learnings: 'Advanced state management with Redux, Working with Flask for backend development',
+    showDisclaimer: true, // Flag for the disclaimer
   },
   {
       id: 2,
@@ -67,6 +68,7 @@ const projectsData = [
       features: 'Integrated Spotify and Instagram feeds, Custom video carousel for music videos, Mobile-first design',
       challenges: 'Implementing real-time updates for event scheduling and ensuring cross-browser compatibility for multimedia elements',
       learnings: 'Mastered advanced state management using Redux, Enhanced knowledge of backend development with Flask, Improved mobile responsiveness and cross-browser testing',
+      showDisclaimer: true, // Flag for the disclaimer
     },
   {
     id: 3,
@@ -96,6 +98,7 @@ const projectsData = [
     features: 'Interactive story creation, Database integration',
     challenges: 'Designing a user-friendly interface, Managing database connections',
     learnings: 'Enhancing Python skills, Database design and management',
+    showDisclaimer: true, // Flag for the disclaimer
   },
   {
     id: 4,
@@ -247,7 +250,7 @@ const StyledModal = styled(Modal)`
     width: auto;
     max-width: 90vw !important;
     margin: auto;
-    background: #212121 !important;
+    background: blue !important;
     color: #fff !important;
     .header {
       background: #212121 !important;
@@ -259,6 +262,7 @@ const StyledModal = styled(Modal)`
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: #212121 !important;
       .description {
         max-width: 800px;
         text-align: left;
@@ -308,7 +312,7 @@ const ModalImage = styled.img`
 
 const ImageDescription = styled.p`
   text-align: center;
-  color: black;
+  color: white;
   margin-top: 5px;
 `;
 
@@ -318,7 +322,7 @@ const StyledModalDescription = styled.div`
   padding: 0 20px;
   p {
     font-size: 1.1em;
-    color: black;
+    color: white;
     line-height: 1.5;
     margin-bottom: 10px;
     strong {
@@ -335,7 +339,7 @@ const TechnologiesUsed = styled.div`
 
 const TechnologyItem = styled.span`
   display: flex;
-
+  flex-direction: column;
   align-items: center;
   gap: 5px;
   color: #fff;
@@ -388,8 +392,22 @@ const Projects = () => {
   );
 };
 
-// Modal Component
 const ProjectModal = ({ project, isOpen, onClose }) => {
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
+  const handleVisitSite = () => {
+    if (project.showDisclaimer) {
+      setShowDisclaimer(true); // Show disclaimer if applicable
+    } else {
+      window.open(project.link, '_blank');
+    }
+  };
+
+  const handleProceed = () => {
+    setShowDisclaimer(false);
+    window.open(project.link, '_blank'); // Open site after confirmation
+  };
+
   const sliderSettings = {
     adaptiveHeight: true,
     dots: true,
@@ -400,55 +418,70 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     arrows: false,
   };
 
-  const handleVisitSite = () => {
-    window.open(project.link, '_blank');
-  };
-
   return (
-    <StyledModal open={isOpen} onClose={onClose}>
-      <Modal.Header>{project.title}</Modal.Header>
-      <Modal.Content scrolling>
-        <ModalImageContainer>
-          <Slider {...sliderSettings}>
-            {project.images.map((image, index) => (
-              <div key={index}>
-                <ModalImage src={image.src} alt={image.description} />
-                <ImageDescription>{image.description}</ImageDescription>
+    <>
+      <StyledModal open={isOpen} onClose={onClose}>
+        <Modal.Header>{project.title}</Modal.Header>
+        <Modal.Content scrolling>
+          <ModalImageContainer>
+            <Slider {...sliderSettings}>
+              {project.images.map((image, index) => (
+                <div key={index}>
+                  <ModalImage src={image.src} alt={image.description} />
+                  <ImageDescription>{image.description}</ImageDescription>
+                </div>
+              ))}
+            </Slider>
+          </ModalImageContainer>
+          <Modal.Description>
+            <StyledModalDescription>
+              <p><strong>Description:</strong> {project.description}</p>
+              <p><strong>Features:</strong> {project.features}</p>
+              <p><strong>Challenges:</strong> {project.challenges}</p>
+              <p><strong>Learnings:</strong> {project.learnings}</p>
+              <div>
+                <p><strong>Technologies Used:</strong></p>
+                <TechnologiesUsed>
+                  {project.technologies.map((technology, index) => (
+                    <TechnologyItem key={index}>
+                      <StackIcon name={getIconForTechnology(technology)} title={technology} /> {technology}
+                    </TechnologyItem>
+                  ))}
+                </TechnologiesUsed>
               </div>
-            ))}
-          </Slider>
-        </ModalImageContainer>
-        <Modal.Description>
-          <StyledModalDescription>
-            <p><strong>Description:</strong> {project.description}</p>
-            <p><strong>Features:</strong> {project.features}</p>
-            <p><strong>Challenges:</strong> {project.challenges}</p>
-            <p><strong>Learnings:</strong> {project.learnings}</p>
-            <div>
-              <p><strong>Technologies Used:</strong></p>
-              <TechnologiesUsed>
-                {project.technologies.map((technology, index) => (
-                  <TechnologyItem key={index}>
-                    <StackIcon name={getIconForTechnology(technology)} title={technology} /> {technology}
-                    <p>{technology}</p>
-                  </TechnologyItem>
-                ))}
-              </TechnologiesUsed>
-            </div>
-          </StyledModalDescription>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button 
-          onClick={handleVisitSite}
-          style={{ background: '#00e6e6', color: 'white' }}
-        >
-          {project.isDeployed ? 'Visit Site' : 'Visit Repo'} <Icon name='external' />
-        </Button>
-        <Button onClick={onClose}>Close</Button>
-      </Modal.Actions>
-    </StyledModal>
+            </StyledModalDescription>
+          </Modal.Description>
+        </Modal.Content>
+        <Modal.Actions>
+          <Button 
+            onClick={handleVisitSite}
+            style={{ background: '#00e6e6', color: 'white' }}
+          >
+            {project.isDeployed ? 'Visit Site' : 'Visit Repo'} <Icon name='external' />
+          </Button>
+          <Button onClick={onClose}>Close</Button>
+        </Modal.Actions>
+      </StyledModal>
+
+      {showDisclaimer && (
+        <StyledModal open={showDisclaimer} onClose={() => setShowDisclaimer(false)}>
+          <Modal.Header>Disclaimer</Modal.Header>
+          <Modal.Content>
+            <p>The page you are about to visit may take up to 60 seconds to load. Do you want to proceed?</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button 
+              onClick={handleProceed}
+              style={{ background: '#00e6e6', color: 'white' }}
+            >
+              Proceed
+            </Button>
+            <Button onClick={() => setShowDisclaimer(false)}>Cancel</Button>
+          </Modal.Actions>
+        </StyledModal>
+      )}
+    </>
   );
-};
+}
 
 export default Projects;

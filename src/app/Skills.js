@@ -16,30 +16,30 @@ const Skills = ({ isMobile }) => {
     { name: "Openai", icon: "openai", category: "Backend" },
     { name: "PostgreSQL", icon: "postgresql", category: "Backend" },
     { name: "Node.js", icon: "nodejs", category: "Backend" },
-    { name: "Express.js", icon: "server", category: "Backend" },
+    // { name: "Express.js", icon: "server", category: "Backend" },
     { name: "Sass", icon: "sass", category: "Frontend" },
     { name: "HTML5", icon: "html5", category: "Frontend" },
     { name: "CSS3", icon: "css3", category: "Frontend" },
-    { name: "SQL", icon: "database", category: "Backend" },
+    // { name: "SQL", icon: "database", category: "Backend" },
     { name: "MySQL", icon: "mysql", category: "Backend" },
-    { name: "SQLite", icon: "database", category: "Backend" },
+    // { name: "SQLite", icon: "database", category: "Backend" },
     { name: "Flask", icon: "flask", category: "Backend" },
     { name: "Github", icon: "github", category: "DevOps" },
     { name: "Redux", icon: "redux", category: "Frontend" },
     { name: "GraphQL", icon: "graphql", category: "Frontend" },
     { name: "npm", icon: "npm", category: "Frontend" },
-    { name: "RESTful APIs", icon: "code", category: "Backend" },
+    // { name: "RESTful APIs", icon: "code", category: "Backend" },
     { name: "AWS", icon: "aws", category: "DevOps" },
-    { name: "Webpack", icon: "cogs", category: "DevOps" },
-    { name: "Babel", icon: "cogs", category: "DevOps" },
-    { name: "OAuth", icon: "lock", category: "DevOps" },
-    { name: "JWT", icon: "key", category: "DevOps" },
+    // { name: "Webpack", icon: "cogs", category: "DevOps" },
+    // { name: "Babel", icon: "cogs", category: "DevOps" },
+    // { name: "OAuth", icon: "lock", category: "DevOps" },
+    // { name: "JWT", icon: "key", category: "DevOps" },
     { name: "Postman", icon: "postman", category: "DevOps" },
     { name: "Render", icon: "render", category: "DevOps" },
     { name: "Semantic UI", icon: "semanticui", category: "Frontend" },
-    { name: "SEO", icon: "search", category: "DevOps" },
+    // { name: "SEO", icon: "search", category: "DevOps" },
     { name: "VSCode", icon: "vscode", category: "DevOps" },
-    { name: "Data Structures and Algorithms", icon: "code branch", category: "DevOps" }
+    // { name: "Data Structures and Algorithms", icon: "code branch", category: "DevOps" }
   ];
 
   const [showModal, setShowModal] = useState(false);
@@ -83,7 +83,7 @@ const header = '<Tech Stack/>'
           
           </div>
           <MoreButton onClick={toggleModal} >
-         <Icon name='ellipsis horizontal' style={{display: 'contents'}}/> 
+         <Icon  style={{display: 'contents', fontFamily: 'Montserrat, sans-serif'}}>More</Icon>
           </MoreButton>
           
         {/* </Grid.Column>
@@ -104,8 +104,9 @@ const header = '<Tech Stack/>'
                 {initialSkills
                   .filter(skill => skill.category === category)
                   .map((skill, index) => (
-                    <div >
+                    <div style={{display: "flex", flexDirection: 'column'}}>
                       <StackIcon name={skill.icon } style={{fontSize: '2em'}}/>
+                      <p>{skill.icon ? skill.name : null}</p>
                     </div>
                      
                       
